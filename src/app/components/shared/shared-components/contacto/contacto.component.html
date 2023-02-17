@@ -1,0 +1,100 @@
+<div class="margin-custom" id="contacto"></div>
+<div class="d-flex justify-content-center">
+  <div class="principal__search animate__animated animate__fadeInUp">
+    <a class="principal__search--boton textos">CONTACTANOS</a>
+  </div>
+</div>
+<section class="course container-fluid my-4">
+  <figure class="course__picture course__picture--right animate__animated animate__fadeInLeft">
+    <img src="./assets/img/contacto.jpg" class="course__img" />
+  </figure>
+
+  <div class="course__about course__about--left animate__animated animate__fadeIn">
+    <h2 class="title">Para contactarnos llenar el siguiente formulario:</h2>
+
+    <div class="container px-3">
+      <form id="contactForm" [formGroup]="formContact" (ngSubmit)="enviar()">
+        <div class="form-floating mb-3">
+          <input
+            class="form-control"
+            formControlName="nombre"
+            id="nombreCompleto"
+            type="text"
+            placeholder="Nombre completo"
+            data-sb-validations="required"
+          />
+          <label for="nombreCompleto">Nombre completo</label>
+          <div class="invalid-feedback" data-sb-feedback="nombreCompleto:required">Nombre es requerido.</div>
+        </div>
+        <div class="form-floating mb-3">
+          <input
+            class="form-control"
+            formControlName="email"
+            id="emailAddress"
+            type="email"
+            placeholder="Email Address"
+            data-sb-validations="required,email"
+          />
+          <label for="emailAddress">Email</label>
+          <div class="invalid-feedback" data-sb-feedback="emailAddress:required">Email es requerido.</div>
+          <div class="invalid-feedback" data-sb-feedback="emailAddress:email">Email no valido.</div>
+        </div>
+        <div class="form-floating mb-3">
+          <input
+            class="form-control"
+            formControlName="telefono"
+            id="telefono"
+            type="text"
+            placeholder="Teléfono"
+            data-sb-validations="required"
+          />
+          <label for="telefono">Teléfono</label>
+          <div class="invalid-feedback" data-sb-feedback="telefono:required">El teléfono es requerido.</div>
+        </div>
+        <div class="form-floating mb-3">
+          <input
+            class="form-control"
+            formControlName="cedula"
+            id="cedula"
+            type="text"
+            placeholder="Cedula"
+            data-sb-validations="required"
+          />
+          <label for="cedula">Cedula</label>
+          <div class="invalid-feedback" data-sb-feedback="cedula:required">La cedula es requerida.</div>
+        </div>
+        <div class="form-floating mb-3">
+          <textarea
+            class="form-control"
+            formControlName="descripcion"
+            id="descricion"
+            type="text"
+            placeholder="Descrición"
+            style="height: 10rem"
+            data-sb-validations="required"
+          ></textarea>
+          <label for="descricion">Descrición</label>
+          <div class="invalid-feedback" data-sb-feedback="descricion:required">La descrición es requerida.</div>
+        </div>
+        <div class="d-flex justify-content-end">
+          <!-- <button class="btn btn-primary" id="submitButton" type="submit">Enviar</button> -->
+
+          <button class="enviar" type="submit">
+            <div class="svg-wrapper-1">
+              <div class="svg-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                  <path fill="none" d="M0 0h24v24H0z"></path>
+                  <path
+                    fill="currentColor"
+                    d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+            <span>Enviar</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

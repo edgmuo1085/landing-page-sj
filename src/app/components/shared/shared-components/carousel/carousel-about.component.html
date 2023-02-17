@@ -1,0 +1,39 @@
+<div class="container-fluid pb-5">
+  <div class="row">
+    <div class="container h-100">
+      <div class="row">
+        <div class="col-12 mt-4">
+          <p-carousel
+            [value]="carouselArray"
+            styleClass="custom-carousel"
+            [numVisible]="3"
+            [numScroll]="1"
+            [circular]="true"
+            [autoplayInterval]="6000"
+            [responsiveOptions]="responsiveOptions"
+          >
+            <ng-template pTemplate="header"></ng-template>
+            <ng-template let-product pTemplate="item">
+              <div class="">
+                <div class="product-item">
+                  <div class="product-item-content">
+                    <div class="mb-2">
+                      <img [src]="product.url" [alt]="product.title" class="product-image img-fluid" />
+                    </div>
+                    <!-- <div class="container__text">
+                      <h4 class="product-title">{{ product.title }}</h4>
+                      <hr />
+                      <div class="product-description">
+                        {{ product.text }}
+                      </div>
+                    </div> -->
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          </p-carousel>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

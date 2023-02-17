@@ -1,0 +1,69 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 col-md-2 p-0">
+      <div class="p-3 text-white color-bg" style="width: 100%; height: 100vh">
+        <div class="text-center titulo">
+          <a href="" class="mb-3 mb-md-0 text-white text-decoration-none">
+            <span class="fs-4">Administrar</span>
+          </a>
+        </div>
+        <hr />
+        <ul class="nav nav-pills flex-column mb-auto navbar">
+          <li class="nav-item">
+            <a class="nav-link text-white" routerLink="registro" routerLinkActive="active" aria-current="page">
+              <i class="fa-solid fa-users me-2" width="16" height="16"></i>
+              Usuarios
+            </a>
+          </li>
+          <li>
+            <a class="nav-link text-white me-2" routerLink="botones" routerLinkActive="active">
+              <i class="fa-solid fa-square-check me-2" width="16" height="16"></i>
+              Botones
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-12 col-md-10 p-0">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarTogglerDemo02">
+            <div class="dropdown me-5">
+              <a
+                href="#"
+                class="d-flex align-items-center text-dark text-decoration-none dropdown-toggle"
+                id="dropdownUser1"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <img src="./assets/img/perfil.jpg" alt="" width="32" height="32" class="rounded-circle me-2" />
+                <strong class="text-dark">Usuario</strong>
+              </a>
+              <ul class="dropdown-menu text-small shadow me-5" aria-labelledby="dropdownUser1">
+                <li><a class="dropdown-item" href="#">Cambiar contraseña</a></li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li><a class="dropdown-item" routerLink="/home">Salir</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="container-fluid p-4">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>

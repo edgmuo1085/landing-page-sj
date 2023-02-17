@@ -6,7 +6,10 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "build:prod": "node --max_old_space_size=4096 node_modules/@angular/cli/bin/ng build --configuration=production --aot",
+    "format:write": "prettier --write \"**/src/**/*.{ts,js,json,html,css,scss,md}\"",
+    "format:check": "prettier --check \"**/src/**/*.{ts,js,json,html,css,scss,md}\""
   },
   "private": true,
   "dependencies": {
@@ -18,12 +21,21 @@
     "@angular/platform-browser": "^15.0.0",
     "@angular/platform-browser-dynamic": "^15.0.0",
     "@angular/router": "^15.0.0",
+    "@fortawesome/fontawesome-free": "^6.3.0",
+    "@ngx-translate/core": "^14.0.0",
+    "@ngx-translate/http-loader": "^7.0.0",
+    "bootstrap": "^5.0.2",
+    "prettier": "^2.8.4",
+    "primeicons": "^6.0.1",
+    "primeng": "^15.2.0",
     "rxjs": "~7.5.0",
+    "sweetalert2": "^11.7.1",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^15.0.2",
+    "@angular/cdk": "^15.1.5",
     "@angular/cli": "~15.0.2",
     "@angular/compiler-cli": "^15.0.0",
     "@types/jasmine": "~4.3.0",
