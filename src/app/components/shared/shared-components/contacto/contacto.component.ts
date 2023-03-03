@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastCustomService } from '../../shared-services/toast-custom.service';
 
 @Component({
   selector: 'app-contacto',
@@ -8,19 +9,35 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class ContactoComponent implements OnInit {
   formContact: FormGroup = new FormGroup({});
+  loading: boolean = false;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private toastService: ToastCustomService) {}
 
   ngOnInit(): void {
     this.formContact = this.fb.group({
       nombre: ['', Validators.required],
-      email: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
       telefono: ['', Validators.required],
       cedula: ['', Validators.required],
       descripcion: ['', Validators.required],
     });
   }
+
   enviar() {
-    console.log(this.formContact);
+    if (this.formContact.invalid) {
+      this.toastService.showToastCustom('Contácto', 'Debe llenar todos los datos.', 'error');
+      return;
+    }
+
+    this.loading = true;
+    setTimeout(() => {
+      this.toastService.showToastCustom('Contácto', 'Mensaje enviado correctamente');
+      this.loading = false;
+      this.formContact.reset();
+    }, 2500);
+  }
+
+  get formCtrlC() {
+    return this.formContact.controls;
   }
 }

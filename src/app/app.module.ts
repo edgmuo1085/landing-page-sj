@@ -6,10 +6,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedComponentsModule } from './components/shared/shared-components/shared-components.module';
+import { SharedPrimeNgModule } from './components/shared/shared-primeng-modules/shared-primeng.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, HttpClientModule, SharedComponentsModule],
+  imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, HttpClientModule, SharedComponentsModule, SharedPrimeNgModule],
   providers: [],
   bootstrap: [AppComponent],
 })
