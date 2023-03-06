@@ -11,7 +11,7 @@ export class ContactoComponent implements OnInit {
   formContact: FormGroup = new FormGroup({});
   loading: boolean = false;
 
-  constructor(private fb: FormBuilder, private toastService: ToastCustomService) {}
+  constructor(private fb: FormBuilder, private toastService: ToastCustomService) { }
 
   ngOnInit(): void {
     this.formContact = this.fb.group({
@@ -28,7 +28,8 @@ export class ContactoComponent implements OnInit {
       this.toastService.showToastCustom('Contácto', 'Debe llenar todos los datos.', 'error');
       return;
     }
-
+    console.log(this.formContact)
+    window.open(`mailto:notificacion@sjasociadossas.com?subject=Se requiere informacion&body=Nombre%3A${this.formContact.value.nombre}%0ACedula%3A${this.formContact.value.cedula}%0ATelefono%3A${this.formContact.value.telefono}%0ACorreo%3A${this.formContact.value.correo}%0ADescripción%3A${this.formContact.value.descripcion}`, `_blank`);
     this.loading = true;
     setTimeout(() => {
       this.toastService.showToastCustom('Contácto', 'Mensaje enviado correctamente');
