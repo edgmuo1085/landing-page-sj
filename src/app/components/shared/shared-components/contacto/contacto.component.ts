@@ -28,12 +28,11 @@ export class ContactoComponent implements OnInit {
       this.toastService.showToastCustom('Contácto', 'Debe llenar todos los datos.', 'error');
       return;
     }
-    console.log(this.formContact)
-    window.open(`mailto:notificacion@sjasociadossas.com?subject=Se requiere informacion&body=Nombre%3A${this.formContact.value.nombre}%0ACedula%3A${this.formContact.value.cedula}%0ATelefono%3A${this.formContact.value.telefono}%0ACorreo%3A${this.formContact.value.correo}%0ADescripción%3A${this.formContact.value.descripcion}`, `_blank`);
     this.loading = true;
     setTimeout(() => {
       this.toastService.showToastCustom('Contácto', 'Mensaje enviado correctamente');
       this.loading = false;
+      window.open(`mailto:notificacion@sjasociadossas.com?subject=Se solicita mas información sobre lo expuesta en la pagina&body=Nombre%3A${this.formContact.value.nombre}%0ACedula%3A${this.formContact.value.cedula}%0ATelefono%3A${this.formContact.value.telefono}%0ACorreo%3A${this.formContact.value.correo}%0ADescripción%3A${this.formContact.value.descripcion}`, `_blank`);
       this.formContact.reset();
     }, 2500);
   }
