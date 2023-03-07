@@ -12,7 +12,7 @@ export class ContactoComponent implements OnInit {
   formContact: FormGroup = new FormGroup({});
   loading: boolean = false;
 
-  constructor(private fb: FormBuilder, private toastService: ToastCustomService, private correoService: CorreoService) { }
+  constructor(private fb: FormBuilder, private toastService: ToastCustomService, private correoService: CorreoService) {}
 
   ngOnInit(): void {
     this.formContact = this.fb.group({
@@ -30,22 +30,26 @@ export class ContactoComponent implements OnInit {
       return;
     }
     this.loading = true;
-    setTimeout(() => {
-      this.toastService.showToastCustom('Contácto', 'Mensaje enviado correctamente');
-      this.loading = false;
-      let nombre = this.formContact.value.nombre;
-      let cedula =this.formContact.value.cedula;
-      let telefono = this.formContact.value.telefono;
-      let correo = this.formContact.value.email;
-      let texto = this.formContact.value.descripcion;
-      let params  = { nombre: nombre ,cedula:cedula,telefono:telefono,correo:correo,texto:texto};
-      let json = JSON.stringify(params);
-      this.correoService.enviarCorreo(json).subscribe((response)=>{
-        console.log(response);
+    let params = {
+      nombre: this.formContact.value.nombre,
+      cedula: this.formContact.value.cedula,
+      telefono: this.formContact.value.telefono,
+      correo: this.formContact.value.email,
+      texto: this.formContact.value.descripcion,
+    };
+
+    const json = JSON.stringify(params);
+    this.correoService.enviarCorreo(json).subscribe({
+      next: response => {
+        this.toastService.showToastCustom('Contácto', 'Mensaje enviado correctamente');
+        this.loading = false;
         this.formContact.reset();
-      });
-      this.formContact.reset();
-    }, 2500);
+      },
+      error: err => {
+        console.error(err);
+        this.loading = false;
+      },
+    });
   }
 
   get formCtrlC() {
