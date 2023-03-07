@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CorreoService } from '../../shared-services/correos.service';
 import { ToastCustomService } from '../../shared-services/toast-custom.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class ContactoComponent implements OnInit {
   formContact: FormGroup = new FormGroup({});
   loading: boolean = false;
 
-  constructor(private fb: FormBuilder, private toastService: ToastCustomService) { }
+  constructor(private fb: FormBuilder, private toastService: ToastCustomService, private correoService: CorreoService) { }
 
   ngOnInit(): void {
     this.formContact = this.fb.group({
@@ -32,7 +33,17 @@ export class ContactoComponent implements OnInit {
     setTimeout(() => {
       this.toastService.showToastCustom('Contácto', 'Mensaje enviado correctamente');
       this.loading = false;
-      window.open(`mailto:notificacion@sjasociadossas.com?subject=Se solicita mas información sobre lo expuesta en la pagina&body=Nombre%3A${this.formContact.value.nombre}%0ACedula%3A${this.formContact.value.cedula}%0ATelefono%3A${this.formContact.value.telefono}%0ACorreo%3A${this.formContact.value.correo}%0ADescripción%3A${this.formContact.value.descripcion}`, `_blank`);
+      let nombre = this.formContact.value.nombre;
+      let cedula =this.formContact.value.cedula;
+      let telefono = this.formContact.value.telefono;
+      let correo = this.formContact.value.email;
+      let texto = this.formContact.value.descripcion;
+      let params  = { nombre: nombre ,cedula:cedula,telefono:telefono,correo:correo,texto:texto};
+      let json = JSON.stringify(params);
+      this.correoService.enviarCorreo(json).subscribe((response)=>{
+        console.log(response);
+        this.formContact.reset();
+      });
       this.formContact.reset();
     }, 2500);
   }
