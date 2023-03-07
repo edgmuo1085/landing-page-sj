@@ -9,7 +9,7 @@ require 'vendor/autoload.php';
 $smtp_host = 'smtp.hostinger.com';
 $smtp_port = 587;
 $smtp_user = 'pruebas@sjasociadossas.com';
-$smtp_pass = 'Pruebas23*';
+$smtp_pass = '*****';
 
 // Configurar los detalles del correo electrónico
 $to_email = 'pruebas@sjasociadossas.com';
