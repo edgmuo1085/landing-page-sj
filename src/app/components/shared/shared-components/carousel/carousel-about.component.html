@@ -17,16 +17,9 @@
               <div class="">
                 <div class="product-item">
                   <div class="product-item-content">
-                    <div class="mb-2">
+                    <div class="mb-2" (click)="abrirModal()">
                       <img [src]="product.url" [alt]="product.title" class="product-image img-fluid" />
                     </div>
-                    <!-- <div class="container__text">
-                      <h4 class="product-title">{{ product.title }}</h4>
-                      <hr />
-                      <div class="product-description">
-                        {{ product.text }}
-                      </div>
-                    </div> -->
                   </div>
                 </div>
               </div>
@@ -37,3 +30,5 @@
     </div>
   </div>
 </div>
+
+<app-sj-modal [visible]="visible" (eventCloseDialogModal)="closeModal($event)"></app-sj-modal>

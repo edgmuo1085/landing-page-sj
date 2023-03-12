@@ -9,6 +9,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CarouselAboutComponent } from './carousel/carousel-about.component';
 import { SharedPrimeNgModule } from '../shared-primeng-modules/shared-primeng.module';
+import { SjModalComponent } from './sj-modal/sj-modal.component';
+import { SjFormInscripcionComponent } from './sj-form-inscripcion/sj-form-inscripcion.component';
 
 @NgModule({
   declarations: [
@@ -19,8 +21,10 @@ import { SharedPrimeNgModule } from '../shared-primeng-modules/shared-primeng.mo
     ContactoComponent,
     NavbarComponent,
     CarouselAboutComponent,
+    SjModalComponent,
+    SjFormInscripcionComponent,
   ],
-  imports: [CommonModule, ReactiveFormsModule, FormsModule, SharedPrimeNgModule],
+  imports: [CommonModule, ReactiveFormsModule, FormsModule, SharedPrimeNgModule, SharedPrimeNgModule],
   exports: [
     ServiciosComponent,
     CoPropiedadesComponent,
@@ -29,6 +33,8 @@ import { SharedPrimeNgModule } from '../shared-primeng-modules/shared-primeng.mo
     ContactoComponent,
     NavbarComponent,
     CarouselAboutComponent,
+    SjModalComponent,
+    SjFormInscripcionComponent,
   ],
 })
 export class SharedComponentsModule {}

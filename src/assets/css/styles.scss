@@ -1,4 +1,46 @@
-.about-content {
+:root {
+  --color-principal: #162328;
+  --color-hover: #282a2c;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Open Sans', 'sans-serif', 'Arial';
+}
+
+section[id] {
+  scroll-margin-top: 70px;
+}
+
+nav {
+  background-color: #fff;
+  width: 100%;
+  // margin-bottom: .5rem;
+  position: fixed;
+  box-shadow: 5px 5px 15px #00000046;
+  z-index: 999;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #000;
+}
+.navbar-light .navbar-nav .nav-link.active-link {
+  color: #000;
+  //text-decoration: underline;
+}
+a:link {
+  color: #000;
+  text-decoration: none;
+}
+a:visited {
+  color: #000;
+  text-decoration: none;
+}
+
+.wrapper-content {
   width: 100%;
   min-height: 100vh;
   background-size: cover;
@@ -7,75 +49,70 @@
   padding: 5rem;
   padding-top: 1rem;
 
-  .course {
+  .section-view {
     color: #000000;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(5, 1fr);
-    /*align-items: center;*/
+
+    .section-view-picture {
+      margin: 0;
+      grid-area: 1 / 3 / 6 / 6;
+
+      &.section-view-picture--right {
+        grid-area: 1 / 1 / 6 / 4;
+      }
+
+      .section-imagen {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+      }
+    }
+
+    .section-view-content {
+      align-self: center;
+      border-radius: 20px;
+      width: 97%;
+      margin: 0 auto;
+      padding: 30px;
+      background: #ffffff;
+      box-shadow: 5px 5px 15px #88888846;
+      grid-area: 2 / 1 / 5 / 4;
+
+      &.section-view-content--left {
+        grid-area: 2 / 3 / 5 / 6;
+      }
+    }
+
+    .section-view-content-valores {
+      margin: 0;
+      grid-area: 1 / 1 / 6 / 6;
+    }
   }
 
-  .course__about {
-    z-index: 100;
-    align-self: center;
-    border-radius: 20px;
-    width: 97%;
-    margin: 0 auto;
-    padding: 30px;
-    background: #ffffff;
-    grid-column: 1/4;
-    grid-row: 2/-2;
-    box-shadow: 5px 5px 15px #88888846;
-  }
-
-  .course__picture {
-    margin: 0;
-    grid-column: 3/-1;
-    grid-row: 1/-1;
-  }
-
-  .course__picture_servicios {
-    margin: 0;
-    grid-column: 1/-1;
-    grid-row: 1/-1;
-  }
-
-  .course__img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 20px;
-  }
-
-  .course__picture--right {
-    grid-column: 1/4;
-  }
-
-  .course__about--left {
-    grid-column: 3/-1;
-  }
-
-  .principal__search {
+  .section-header-title {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0.7rem 3.5rem;
-    width: 50%;
+    width: 100%;
     border-radius: 4rem;
     margin-top: 1rem;
-  }
+    text-align: center;
 
-  .principal__search--boton {
-    background-color: var(--color-principal);
-    color: #162328;
-    cursor: pointer;
-    padding: 1rem 3rem;
-    border-radius: 0.7rem;
-    font-size: 1rem;
-    font-weight: 700;
+    .section-title {
+      color: var(--color-principal);
+      cursor: pointer;
+      padding: 1rem 3rem;
+      border-radius: 0.7rem;
+      font-size: 3rem;
+      font-weight: 700;
 
-    &:hover {
-      background-color: var(--color-hover);
+      &:hover {
+        color: var(--color-hover);
+      }
     }
   }
 
@@ -121,40 +158,48 @@
       transform: scale(0.95);
     }
   }
-}
-html {
-  scroll-behavior: smooth;
-}
-section[id] {
-  scroll-margin-top: 70px;
+
+  .margin-custom {
+    display: block;
+    height: 5rem;
+  }
 }
 
-nav {
-  background-color: #fff;
-  width: 100%;
-  // margin-bottom: .5rem;
-  position: fixed;
-  box-shadow: 5px 5px 15px #00000046;
-  z-index: 999;
+@media screen and (max-width: 768px) {
+  .wrapper-content {
+    padding: 0.5rem;
+
+    .margin-custom {
+      height: 3rem;
+    }
+  }
 }
 
-.navbar-light .navbar-nav .nav-link {
-  color: #000;
-}
-.navbar-light .navbar-nav .nav-link.active-link {
-  color: #000;
-  //text-decoration: underline;
-}
-a:link {
-  color: #000;
-  text-decoration: none;
-}
-a:visited {
-  color: #000;
-  text-decoration: none;
-}
+@media screen and (max-width: 576px) {
+  .wrapper-content {
+    padding: 0.5rem;
 
-.margin-custom {
-  display: block;
-  height: 5rem;
+    .section-view {
+      .section-view-picture {
+        grid-area: 1 / 1 / 6 / 6;
+
+        &.section-view-picture--right {
+          grid-area: 1 / 1 / 6 / 6;
+        }
+      }
+
+      .section-view-content {
+        grid-area: 2 / 1 / 5 / 6;
+
+        &.section-view-content--left {
+          grid-area: 2 / 1 / 5 / 6;
+        }
+      }
+    }
+    .section-header-title {
+      .section-title {
+        font-size: 2rem;
+      }
+    }
+  }
 }
