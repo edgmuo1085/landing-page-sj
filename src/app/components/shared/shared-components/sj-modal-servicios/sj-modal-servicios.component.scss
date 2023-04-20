@@ -1,0 +1,14 @@
+.layout-modal-login {
+  .p-dialog-mask {
+    background-color: rgba(0, 0, 0, 0.5);
+    pointer-events: unset;
+
+    .p-dialog {
+      .p-dialog-header,
+      .p-dialog-content {
+        background-color: #fff;
+      }
+      .p-dialog-header{padding: 0.5rem;}
+    }
+  }
+}

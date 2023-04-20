@@ -10,6 +10,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { CarouselAboutComponent } from './carousel/carousel-about.component';
 import { SharedPrimeNgModule } from '../shared-primeng-modules/shared-primeng.module';
 import { SjModalComponent } from './sj-modal/sj-modal.component';
+import { SjModalServiciosComponent } from './sj-modal-servicios/sj-modal-servicios.component';
 import { SjFormInscripcionComponent } from './sj-form-inscripcion/sj-form-inscripcion.component';
 
 @NgModule({
@@ -22,6 +23,7 @@ import { SjFormInscripcionComponent } from './sj-form-inscripcion/sj-form-inscri
     NavbarComponent,
     CarouselAboutComponent,
     SjModalComponent,
+    SjModalServiciosComponent,
     SjFormInscripcionComponent,
   ],
   imports: [CommonModule, ReactiveFormsModule, FormsModule, SharedPrimeNgModule, SharedPrimeNgModule],
@@ -34,6 +36,7 @@ import { SjFormInscripcionComponent } from './sj-form-inscripcion/sj-form-inscri
     NavbarComponent,
     CarouselAboutComponent,
     SjModalComponent,
+    SjModalServiciosComponent,
     SjFormInscripcionComponent,
   ],
 })

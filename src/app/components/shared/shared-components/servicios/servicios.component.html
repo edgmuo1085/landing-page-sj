@@ -12,7 +12,7 @@
   <div class="section-view-content animate__animated animate__fadeIn">
     <h2 class="title">Servicios:</h2>
     <p class="about__paragraph textos">
-      Administración de Propiedad horizontal.
+     <a (click)="abrirModal('administracion')"> Administración de Propiedad horizontal.</a>
       <br />
       Gestión de avalúos inmobiliarios.
       <br />
@@ -20,7 +20,7 @@
       <br />
       Venta de Propiedad.
       <br />
-      Servicios de mantenimiento y adecuación
+      <a (click)="abrirModal('mantenimiento')">Servicios de mantenimiento y adecuación</a>
       <br />
       Servicios de proyección ambiental.
       <br />
@@ -28,7 +28,48 @@
       <br />
       Servicios In-House de conserjería y Aseo.
       <br />
-      Asesorías contables, jurídicas y financieras.
+      Asesorías <a (click)="abrirModal('contable')">contables</a>, <a (click)="abrirModal('juridica')">jurídicas</a> y financieras.
     </p>
   </div>
 </section>
+
+<app-sjservicios-modal [visible]="visible" (eventCloseDialogModal)="closeModal($event)">
+  <ng-container [ngSwitch]="categoria">
+    <ng-container *ngSwitchCase="'administracion'">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Santiago Valencia</h5>
+          <p class="card-text">Teléfono: (123) 456-7890</p>
+          <p class="card-text">Email: administracion@sjasociadossas.com</p>
+        </div>
+      </div>
+    </ng-container>
+    <ng-container *ngSwitchCase="'juridica'">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Cristian Garcia</h5>
+          <p class="card-text">Teléfono: (123) 456-7890</p>
+          <p class="card-text">Email: juridica@sjasociadossas.com</p>
+        </div>
+      </div>
+    </ng-container>
+    <ng-container *ngSwitchCase="'contable'">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Stiven</h5>
+          <p class="card-text">Teléfono: (123) 456-7890</p>
+          <p class="card-text">Email: contable@sjasociadossas.com</p>
+        </div>
+      </div>
+    </ng-container>
+    <ng-container *ngSwitchCase="'mantenimiento'">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Juan</h5>
+          <p class="card-text">Teléfono: (123) 456-7890</p>
+          <p class="card-text">Email: operativo@sjasociadossas.com</p>
+        </div>
+      </div>
+    </ng-container>
+  </ng-container>
+</app-sjservicios-modal>
