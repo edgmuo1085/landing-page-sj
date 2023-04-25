@@ -17,7 +17,7 @@
               <div class="">
                 <div class="product-item">
                   <div class="product-item-content">
-                    <div class="mb-2" (click)="abrirModal()">
+                    <div class="mb-2" (click)="abrirModal(product.link)">
                       <img [src]="product.url" [alt]="product.title" class="product-image img-fluid" />
                     </div>
                   </div>
@@ -31,4 +31,4 @@
   </div>
 </div>
 
-<app-sj-modal [visible]="visible" (eventCloseDialogModal)="closeModal($event)"></app-sj-modal>
+<app-sj-modal [visible]="visible" (eventCloseDialogModal)="closeModal($event)" [linkPago]="linkPago"></app-sj-modal>

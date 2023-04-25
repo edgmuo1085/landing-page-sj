@@ -9,5 +9,5 @@
   [(visible)]="visible"
   (onHide)="_eventCloseDialogModal()"
 >
-  <app-sj-form-inscripcion (closeDialogModal)="cerrarModal($event)"></app-sj-form-inscripcion>
+  <app-sj-form-inscripcion (closeDialogModal)="cerrarModal($event)" [linkPago]="linkPago"></app-sj-form-inscripcion>
 </p-dialog>

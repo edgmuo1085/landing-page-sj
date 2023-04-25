@@ -7,6 +7,7 @@ import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angu
   encapsulation: ViewEncapsulation.None,
 })
 export class SjModalComponent {
+  @Input() linkPago: string = '';
   @Input() visible: boolean = false;
   @Output() eventCloseDialogModal: EventEmitter<boolean> = new EventEmitter<boolean>();
 

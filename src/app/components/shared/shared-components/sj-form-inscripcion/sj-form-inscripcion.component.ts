@@ -1,5 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ToastCustomService } from '../../shared-services/toast-custom.service';
 
 @Component({
@@ -8,39 +7,22 @@ import { ToastCustomService } from '../../shared-services/toast-custom.service';
   styleUrls: ['./sj-form-inscripcion.component.scss'],
 })
 export class SjFormInscripcionComponent {
+  @Input() linkPago: string = '';
   @Output() closeDialogModal: EventEmitter<boolean> = new EventEmitter<boolean>();
-  formRegister: FormGroup = new FormGroup({});
-  loading: boolean = false;
+  
+  constructor(private toastService: ToastCustomService) {
 
-  constructor(private fb: FormBuilder, private toastService: ToastCustomService) {
-    this.formRegister = this.fb.group({
-      referencia: ['', [Validators.required]],
-      valor: ['', [Validators.required, Validators.minLength(3)]],
-      fechaPago: ['', [Validators.required]],
-      descripcion: ['', [Validators.required]],
-    });
   }
 
   cerrarModalDialog() {
     this.closeDialogModal.emit(false);
   }
-
-  onSubmitEnviar() {
-    if (this.formRegister.invalid) {
-      this.toastService.showToastCustom('Inscripción', 'Debe llenar todos los datos.', 'error');
+  urlPago() {
+    console.log('entra' , this.linkPago);
+    if(this.linkPago === '#'){
+      this.toastService.showToastCustom('Pago', 'Enlace de pago en construcción.','warn', 3000);
       return;
     }
-
-    this.loading = true;
-    setTimeout(() => {
-      this.toastService.showToastCustom('Inscripción', 'Inscripción realizada correctamente');
-      this.loading = false;
-      this.cerrarModalDialog();
-      this.formRegister.reset();
-    }, 2500);
-  }
-
-  get formCtrlR() {
-    return this.formRegister.controls;
+    window.open(this.linkPago);
   }
 }

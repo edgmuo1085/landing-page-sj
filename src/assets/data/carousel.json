@@ -2,49 +2,49 @@
   {
     "title": "Edificio Comercial ARAZÁ P.H.",
     "text": "Arazá",
-    "link": "",
+    "link": "#",
     "url": "./assets/img/carousel/araza.jpg"
   },
   {
     "title": "EDIFICIO BALCONES DE SANTA MARÍA DE LOS ANGELES P.H",
     "text": "balcones-santa-maria",
-    "link": "",
+    "link": "#",
     "url": "./assets/img/carousel/balcones-santa-maria.jpg"
   },
   {
     "title": "URBANIZACIÓN HATO VERDE APARTAMENTOS P.H.",
     "text": "hato-verde",
-    "link": "",
+    "link": "#",
     "url": "./assets/img/carousel/hato-verde.jpg"
   },
   {
     "title": "CONJUNTO RESIDENCIAL SENDAI P.H.",
     "text": "sendai",
-    "link": "",
+    "link": "#",
     "url": "./assets/img/carousel/sendai.jpg"
   },
   {
     "title": "PARCELACIÓN TERRA NATURA P.H.",
     "text": "terra-natura",
-    "link": "",
+    "link": "#",
     "url": "./assets/img/carousel/terra-natura.jpg"
   },
   {
     "title": "CONJUNTO RESIDENCIAL EDIFICIO TORRE VERSALLES P.H.",
     "text": "torre-versalles",
-    "link": "",
+    "link": "https://checkout.wompi.co/l/rf5eFT",
     "url": "./assets/img/carousel/torre-versalles.jpg"
   },
   {
     "title": "LISBOA CONJUNTO RESIDENCIAL.",
     "text": "lisboa",
-    "link": "",
+    "link": "#",
     "url": "./assets/img/carousel/lisboa.jpg"
   },
   {
     "title": "CONDOMINIO SAN NICOLAS DE LLANOGRANDE P.H.",
     "text": "san-nicolas",
-    "link": "",
+    "link": "#",
     "url": "./assets/img/carousel/san-nicolas.jpg"
   }
 ]
