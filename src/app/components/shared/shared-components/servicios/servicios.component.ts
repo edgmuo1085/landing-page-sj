@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
-import { SjModalServiciosComponent } from '../sj-modal-servicios/sj-modal-servicios.component';
 
 @Component({
   selector: 'app-servicios',
   templateUrl: './servicios.component.html',
-  styleUrls: ['./servicios.component.scss']
+  styleUrls: ['./servicios.component.scss'],
 })
 export class ServiciosComponent {
   visible: boolean = false;
   responsiveOptions: any[] = [];
-  categoria:string='';
+  categoria: string = '';
+
   constructor() {
     this.responsiveOptions = [
       {
@@ -31,7 +31,7 @@ export class ServiciosComponent {
   }
 
   abrirModal(variable: string) {
-    this.categoria=variable;
+    this.categoria = variable;
     this.visible = true;
   }
 

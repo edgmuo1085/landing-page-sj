@@ -11,25 +11,21 @@
 
   <div class="section-view-content animate__animated animate__fadeIn">
     <h2 class="title">Servicios:</h2>
-    <p class="about__paragraph textos">
-     <a (click)="abrirModal('administracion')"> Administración de Propiedad horizontal.</a>
-      <br />
-      Gestión de avalúos inmobiliarios.
-      <br />
-      Renta de Propiedad.
-      <br />
-      Venta de Propiedad.
-      <br />
-      <a (click)="abrirModal('mantenimiento')">Servicios de mantenimiento y adecuación</a>
-      <br />
-      Servicios de proyección ambiental.
-      <br />
-      Administración de establecimientos comerciales (Bodegas,locales,centros comerciales y centros de entretenimiento).
-      <br />
-      Servicios In-House de conserjería y Aseo.
-      <br />
-      Asesorías <a (click)="abrirModal('contable')">contables</a>, <a (click)="abrirModal('juridica')">jurídicas</a> y financieras.
-    </p>
+    <div class="servicios-entidad">
+      <p>
+        <a (click)="abrirModal('administracion')"> Administración de Propiedad horizontal.</a>
+      </p>
+      <p>Gestión de avalúos inmobiliarios.</p>
+      <p>Renta de Propiedad.</p>
+      <p>Venta de Propiedad.</p>
+      <p>
+        <a (click)="abrirModal('mantenimiento')">Servicios de mantenimiento y adecuación</a>
+      </p>
+      <p>Servicios de proyección ambiental.</p>
+      <p>Administración de establecimientos comerciales (Bodegas,locales,centros comerciales y centros de entretenimiento).</p>
+      <p>Servicios In-House de conserjería y aseo.</p>
+      <p>Asesorías <a (click)="abrirModal('contable')">contables</a>, <a (click)="abrirModal('juridica')">jurídicas</a> y financieras.</p>
+    </div>
   </div>
 </section>
 
@@ -38,36 +34,52 @@
     <ng-container *ngSwitchCase="'administracion'">
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title">Santiago Valencia Lobo</h5>
-          <p class="card-text">Teléfono: 3205712040</p>
-          <p class="card-text">Email: direccionadministrativa@sjasociadossas.com</p>
+          <h3 class="card-title">Santiago Valencia Lobo</h3>
+          <p class="card-text">
+            <span><i class="fa-solid fa-phone"></i> Teléfono:</span> 3205712040
+          </p>
+          <p class="card-text">
+            <span><i class="fa-solid fa-envelope"></i> Email:</span> direccionadministrativa@sjasociadossas.com
+          </p>
         </div>
       </div>
     </ng-container>
     <ng-container *ngSwitchCase="'juridica'">
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title">Cristian Garcia Garcia</h5>
-          <p class="card-text">Teléfono: 3122962390</p>
-          <p class="card-text">Email: direccionjuridica@sjasociadossas.com</p>
+          <h3 class="card-title">Cristian Garcia Garcia</h3>
+          <p class="card-text">
+            <span><i class="fa-solid fa-phone"></i> Teléfono:</span> 3122962390
+          </p>
+          <p class="card-text">
+            <span><i class="fa-solid fa-envelope"></i> Email:</span> direccionjuridica@sjasociadossas.com
+          </p>
         </div>
       </div>
     </ng-container>
     <ng-container *ngSwitchCase="'contable'">
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title">Stivenson Duque Guzman</h5>
-          <p class="card-text">Teléfono: 3103566071</p>
-          <p class="card-text">Email: direccioncontable@sjasociadossas.com</p>
+          <h3 class="card-title">Stivenson Duque Guzman</h3>
+          <p class="card-text">
+            <span><i class="fa-solid fa-phone"></i> Teléfono:</span> 3103566071
+          </p>
+          <p class="card-text">
+            <span><i class="fa-solid fa-envelope"></i> Email:</span> direccioncontable@sjasociadossas.com
+          </p>
         </div>
       </div>
     </ng-container>
     <ng-container *ngSwitchCase="'mantenimiento'">
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title">Juan Carlos Cardenas</h5>
-          <p class="card-text">Teléfono: 3122976917</p>
-          <p class="card-text">Email: direccionoperativa@sjasociadossas.com</p>
+          <h3 class="card-title">Juan Carlos Cardenas</h3>
+          <p class="card-text">
+            <span><i class="fa-solid fa-phone"></i> Teléfono:</span> 3122976917
+          </p>
+          <p class="card-text">
+            <span><i class="fa-solid fa-envelope"></i> Email:</span> direccionoperativa@sjasociadossas.com
+          </p>
         </div>
       </div>
     </ng-container>
