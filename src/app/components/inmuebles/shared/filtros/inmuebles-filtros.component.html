@@ -17,15 +17,17 @@
     </div>
     <div class="col-12 col-md-3 col-lg-3 my-2">
       <div class="form-floating">
-        <input
-          class="form-control"
-          id="presupuesto"
-          type="text"
-          placeholder="Presupuesto"
-          (blur)="consultarFiltro($event)"
-          [(ngModel)]="presupuesto"
-        />
-        <label for="presupuesto">Presupuesto</label>
+        <select
+          class="form-select"
+          id="copropiedad"
+          aria-label="Copropiedad"
+          (change)="consultarFiltro($event)"
+          [(ngModel)]="copropiedad"
+        >
+          <option value="" disabled selected="selected">Elija una opción</option>
+          <option *ngFor="let copropiedad of tipoCopropiedad" [value]="copropiedad.value">{{ copropiedad.label }}</option>
+        </select>
+        <label for="copropiedad">Copropiedad</label>
       </div>
     </div>
     <div class="col-12 col-md-3 col-lg-3 my-2">

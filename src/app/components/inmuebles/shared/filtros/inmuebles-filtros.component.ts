@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ParametrosShared } from 'src/app/components/interfaces/parametros.interface';
+
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -13,8 +14,9 @@ export class InmueblesFiltrosComponent implements OnInit {
   tiposInmuebles: ParametrosShared[] = environment.tiposInmuebles;
   estadosInmueble: ParametrosShared[] = environment.estadoInmueble;
   listaHabitaciones: ParametrosShared[] = environment.listaHabitaciones;
+    tipoCopropiedad: ParametrosShared[] =environment.listaCopropiedad;
   tipoInmueble: string = '';
-  presupuesto: string = '';
+  copropiedad:string='';
   estado: string = '';
   habitaciones: string = '';
 
@@ -24,7 +26,7 @@ export class InmueblesFiltrosComponent implements OnInit {
 
   limpiarFiltros() {
     this.tipoInmueble = '';
-    this.presupuesto = '';
+    this.copropiedad = '';
     this.estado = '';
     this.habitaciones = '';
     this.actionFiltrosInmueble.emit();
@@ -37,7 +39,7 @@ export class InmueblesFiltrosComponent implements OnInit {
 
     let data = [
       { keyForm: 'tipoInmueble', valueForm: this.tipoInmueble },
-      { keyForm: 'precio', valueForm: this.presupuesto },
+      { keyForm: 'copropiedad', valueForm: this.copropiedad },
       { keyForm: 'estado', valueForm: this.estado },
       { keyForm: 'habitacion', valueForm: this.habitaciones },
     ];

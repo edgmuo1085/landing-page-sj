@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { StorageLocalService } from './storage-local.service';
-import { environment } from 'src/environments/environment';
 import { BienesA, InformacionGeneralA, InformacionOcupacionA, ReferenciasA } from '../../interfaces/arrendamiento.interface';
 
 @Injectable({
@@ -31,11 +30,6 @@ export class StepArrendamientosService {
     this.infoReferenciasArrendarVal$ = this.infoReferenciasArrendar.asObservable();
     this.infoBienesArrendar = new BehaviorSubject<BienesA>(this.informacionBienes);
     this.infoBienesArrendarVal$ = this.infoBienesArrendar.asObservable();
-
-    this.setInfoGeneralAStorage();
-    this.setInfoOcupacionAStorage();
-    this.setReferenciasAStorage();
-    this.setBienesAStorage();
   }
 
   setInfoGenArrendar(infoGeneral: InformacionGeneralA): void {
@@ -70,42 +64,6 @@ export class StepArrendamientosService {
     return this.infoBienesArrendarVal$;
   }
 
-  private setInfoGeneralAStorage(): void {
-    const gestorCapiroInfoGen = this.storageService.localGet(environment.storageKey.infoGeneralArrendar);
-    let inforGen: InformacionGeneralA = {} as InformacionGeneralA;
-    if (gestorCapiroInfoGen) {
-      inforGen = JSON.parse(gestorCapiroInfoGen);
-    }
-    this.setInfoGenArrendar(gestorCapiroInfoGen ? inforGen : this.informacionGeneral);
-  }
-
-  private setInfoOcupacionAStorage(): void {
-    const gestorCapiroInfoOcup = this.storageService.localGet(environment.storageKey.infoOcupacionArrendar);
-    let inforOcup: InformacionOcupacionA = {} as InformacionOcupacionA;
-    if (gestorCapiroInfoOcup) {
-      inforOcup = JSON.parse(gestorCapiroInfoOcup);
-    }
-    this.setInfoOcupArrendar(gestorCapiroInfoOcup ? inforOcup : this.informacionOcupacion);
-  }
-
-  private setReferenciasAStorage(): void {
-    const gestorCapiroReferencias = this.storageService.localGet(environment.storageKey.infoReferenciasArrendar);
-    let inforRefer: ReferenciasA = {} as ReferenciasA;
-    if (gestorCapiroReferencias) {
-      inforRefer = JSON.parse(gestorCapiroReferencias);
-    }
-    this.setReferenciasArrendar(gestorCapiroReferencias ? inforRefer : this.informacionReferencias);
-  }
-
-  private setBienesAStorage(): void {
-    const gestorCapiroBienes = this.storageService.localGet(environment.storageKey.infoBienesArrendar);
-    let inforBienes: BienesA = {} as BienesA;
-    if (gestorCapiroBienes) {
-      inforBienes = JSON.parse(gestorCapiroBienes);
-    }
-    this.setBienesArrendar(gestorCapiroBienes ? inforBienes : this.informacionBienes);
-  }
-
   clearObservablesArrendamiento() {
     let inforGen: InformacionGeneralA = {} as InformacionGeneralA;
     let inforOcup: InformacionOcupacionA = {} as InformacionOcupacionA;
@@ -116,9 +74,5 @@ export class StepArrendamientosService {
     this.setInfoOcupArrendar(inforOcup);
     this.setReferenciasArrendar(inforRefer);
     this.setBienesArrendar(inforBienes);
-    this.storageService.localRemove(environment.storageKey.infoGeneralArrendar);
-    this.storageService.localRemove(environment.storageKey.infoOcupacionArrendar);
-    this.storageService.localRemove(environment.storageKey.infoReferenciasArrendar);
-    this.storageService.localRemove(environment.storageKey.infoBienesArrendar);
   }
 }

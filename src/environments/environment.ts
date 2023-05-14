@@ -14,8 +14,8 @@ const constants = {
   ...nombresDocumentosAvaluoHipoteca,
 };
 export const environment = {
-  ...constants,
   production: false,
+  ...constants,
   //URL_API: 'http://44.203.200.178:8563/',
   URL_API: 'https://sjasociadossas.com/',
   //URL_API: 'http://192.168.20.49:8081/',

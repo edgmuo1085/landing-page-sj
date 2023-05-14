@@ -7,11 +7,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedComponentsModule } from './components/shared/shared-components/shared-components.module';
 import { SharedPrimengModulesModule } from './components/shared/shared-primeng-modules/shared-primeng-modules.module';
+import { InmueblesRoutingModule } from './components/inmuebles/inmuebles-routing.module';
 
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, HttpClientModule, SharedComponentsModule, SharedPrimengModulesModule],
+  imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, InmueblesRoutingModule,HttpClientModule, SharedComponentsModule, SharedPrimengModulesModule],
   providers: [],
   bootstrap: [AppComponent],
 })

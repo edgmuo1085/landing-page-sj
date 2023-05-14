@@ -25,12 +25,13 @@ import { SharedPrimengModulesModule } from '../shared/shared-primeng-modules/sha
 import { HomeServiciosComponent } from './shared/cards/home-servicios.component';
 import { InmuebleSubirArchivosComponent } from './shared/subir-archivos/inmueble-subir-archivos.component';
 import { InmuebleDetalleComponent } from './detalle/inmueble-detalle.component';
+import { LayoutAuthComponent } from './shared/layout-auth/layout-auth.component';
 
 
 
 
 @NgModule({
-  declarations: [InmueblesComponent,ArriendoComponent, VentaComponent,
+  declarations: [InmueblesComponent, ArriendoComponent, VentaComponent,
     InmuebleRegistrarComponent,
     InmuebleListaComponent,
     InmuebleMenuComponent,
@@ -40,16 +41,16 @@ import { InmuebleDetalleComponent } from './detalle/inmueble-detalle.component';
     InmueblesFiltrosComponent,
     InmueblePropiedadItemComponent,
     ModalInmuebleComponent,
-  NavbarComponent,HomeServiciosComponent,GaleriaInmuebleComponent,InmuebleSubirArchivosComponent,InmuebleDetalleComponent],
+    NavbarComponent, HomeServiciosComponent, LayoutAuthComponent,GaleriaInmuebleComponent, InmuebleSubirArchivosComponent, InmuebleDetalleComponent],
   imports: [
     CommonModule,
-    InmueblesRoutingModule, 
+    InmueblesRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     SharedModulesModule,
     SharedPrimengModulesModule
-   
+
   ],
-  exports:[NavbarComponent]
+  exports: [NavbarComponent]
 })
 export class InmueblesModule { }

@@ -280,6 +280,40 @@ export const parametrosSelect = {
       label: 'Otro',
     },
   ],
+  listaCopropiedad: [
+    {
+      value: '1',
+      label: 'EDIFICIO BALCONES DE SANTA MARÍA DE LOS ANGELES P.H.',
+    },
+    {
+      value: '2',
+      label: 'EDIFCIO COMERCIAL ARAZÁ P.H.',
+    },
+    {
+      value: '3',
+      label: 'URBANIZACIÓN HATO VERDE APARTAMENTOS P.H.',
+    },
+    {
+      value: '4',
+      label: 'CONJUNTO RESIDENCIAL SENDAI P.H.',
+    },
+    {
+      value:'5',
+      label:'PARCELACIÓN TERRA NATURA P.H.',
+    },
+    {
+      value:'6',
+      label:'CONJUNTO RESIDENCIAL EDIFICIO TORRE VERSALLES P.H.',
+    },
+    {
+      value:'7',
+      label:'LISBOA CONJUNTO RESIDENCIAL.',
+    },
+    {
+      value:'8',
+      label:'CONDOMINIO SAN NICOLAS DE LLANOGRANDE P.H.',
+    }
+  ],
 };
 
 export const requisitosPropiedades = {
