@@ -59,7 +59,7 @@ export class InmuebleTableComponent {
   mostrarImg(event: ResponseInmueble) {
     this.visible = true;
     this.showUpload = false;
-    this.router.navigate(['/inmuebles/sesion/detalle/', event.id]);
+    this.router.navigate(['/inmuebles/detalle/', event.id]);
   }
 
   subirImg(inmueble: ResponseInmueble) {
@@ -70,7 +70,7 @@ export class InmuebleTableComponent {
   }
 
   actionEditInmueble(idInmueble: number) {
-    this.router.navigate(['/inmuebles/sesion/actualizar/', idInmueble]);
+    this.router.navigate(['/inmuebles/actualizar/', idInmueble]);
   }
 
   actualizarImagenes(inmueble: ResponseInmueble) {

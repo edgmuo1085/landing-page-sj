@@ -12,12 +12,12 @@ import { ParametrosShared } from 'src/app/components/interfaces/parametros.inter
 export class InmuebleFormComponent {
   @Input() cargarImagenes: boolean = false;
   @Input() formRegistroInmueble: FormGroup = new FormGroup({});
-  @Input() idUsuario: number = 0;
   @Input() idInmueble: number = 0;
   @Input() loading: boolean = false;
   @Input() actualizarInmueble = false;
   @Input() msgTituloPage: string = '';
   @Input() tiposInmuebles: ParametrosShared[] = [];
+  @Input() listaCopropiedad: ParametrosShared[] = [];
   @Input() listaHabitaciones: ParametrosShared[] = [];
   @Input() listaEstratos: ParametrosShared[] = [];
   @Input() listaBanios: ParametrosShared[] = [];
@@ -35,7 +35,7 @@ export class InmuebleFormComponent {
 
   btnCancel() {
     if (this.actualizarInmueble) {
-      this.router.navigate(['/inmuebles/sesion/listar']);
+      this.router.navigate(['/inmuebles/listar']);
       return;
     }
     this.formRegistroInmueble.reset();

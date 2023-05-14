@@ -12,7 +12,7 @@ export class InmueblePropiedadItemComponent implements OnInit {
   isLogging: string = '';
 
   constructor(private dataUserService: DataUserService) {
-    this.isLogging = this.dataUserService.enableToken() ? '/sesion' : '';
+
   }
 
   ngOnInit(): void {}

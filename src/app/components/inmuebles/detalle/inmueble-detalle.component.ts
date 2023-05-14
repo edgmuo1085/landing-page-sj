@@ -83,7 +83,7 @@ export class InmuebleDetalleComponent implements OnInit {
   }
 
   arriendo() {
-    this.stepArrendarService.clearObservablesArrendamiento();
-    this.router.navigate(['/arrendamiento' + this.isLogging + '/informacion-general']);
+    
+   
   }
 }

@@ -16,8 +16,8 @@ export class InmuebleMenuComponent implements OnInit {
   ngOnInit(): void {
     let registerUpdate = this.actualizarInmueble ? 'Actualizar inmueble' : 'Registrar inmueble';
     this.items = [
-      { label: 'Inmuebles', icon: 'pi pi-fw pi-table', routerLink: ['/inmuebles/sesion/listar'] },
-      { label: registerUpdate, icon: 'pi pi-fw pi-pencil', routerLink: ['/inmuebles/sesion/registrar'] },
+      { label: 'Inmuebles', icon: 'pi pi-fw pi-table', routerLink: ['/inmuebles/listar'] },
+      { label: registerUpdate, icon: 'pi pi-fw pi-pencil', routerLink: ['/inmuebles/registrar'] },
     ];
   }
 }

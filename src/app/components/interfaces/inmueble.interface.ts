@@ -10,9 +10,9 @@ export interface Inmueble {
   precio: number;
   tipoPublicacion: string;
   tipoCons: string;
-  idUsuario: number;
   direccion: string;
   id: number;
+  listaCopropiedad: string;
 }
 
 export class InmuebleModel implements Inmueble {
@@ -28,10 +28,10 @@ export class InmuebleModel implements Inmueble {
     public precio: number,
     public tipoPublicacion: string,
     public tipoCons: string,
-    public idUsuario: number,
     public direccion: string,
-    public id: number
-  ) {}
+    public id: number,
+    public listaCopropiedad: string
+  ) { }
 }
 
 export type InmuebleRegistro = Omit<Inmueble, 'id'>;
@@ -50,6 +50,6 @@ export class InmuebleRegistroModel implements InmuebleRegistro {
     public tipoPublicacion: string,
     public tipoCons: string,
     public direccion: string,
-    public idUsuario: number
-  ) {}
+    public listaCopropiedad: string
+  ) { }
 }

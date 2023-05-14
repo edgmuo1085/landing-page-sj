@@ -45,10 +45,9 @@ import { LayoutAuthComponent } from './shared/layout-auth/layout-auth.component'
   imports: [
     CommonModule,
     InmueblesRoutingModule,
-    FormsModule,
     ReactiveFormsModule,
     SharedModulesModule,
-    SharedPrimengModulesModule
+    SharedPrimengModulesModule, FormsModule
 
   ],
   exports: [NavbarComponent]
