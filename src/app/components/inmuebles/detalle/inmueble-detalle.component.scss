@@ -1,0 +1,81 @@
+@import 'layout.functions';
+
+#section-detalle-inmueble {
+  .detalle-titulo {
+    font-size: cap-font-size(32px);
+    color: var(--color-principal);
+    font-weight: 700;
+    padding: cap-font-size(12px) 0 cap-font-size(8px) 0;
+    border-bottom: cap-font-size(1px) solid var(--color-tercer);
+  }
+
+  .detalle-galeria {
+    width: 100%;
+    position: relative;
+  }
+
+  .detalle-subtitulo {
+    font-size: cap-font-size(28px);
+    color: var(--color-tercer);
+    font-weight: 700;
+    margin-bottom: cap-font-size(16px);
+    margin-left: cap-font-size(16px);
+  }
+
+  .detalle-caracteristicas-one {
+    margin-left: cap-font-size(16px);
+
+    .caracteristica-inmueble {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin: cap-font-size(16px) 0;
+
+      .icon-caracteristica {
+        width: 100%;
+        max-width: cap-font-size(32px);
+      }
+
+      .icon-custom {
+        font-size: cap-font-size(22px);
+        margin-left: cap-font-size(7px);
+        margin-right: cap-font-size(7px);
+        color: var(--color-principal);
+      }
+
+      p {
+        padding: 0;
+        margin: 0 0 0 cap-font-size(4px);
+      }
+    }
+  }
+
+  .detalle-caracteristicas-two {
+    display: flex;
+    margin: cap-font-size(32px) 0 cap-font-size(32px) cap-font-size(16px);
+
+    .detalle-badges {
+      background-color: var(--color-tercer);
+      color: #ffffff;
+      padding: 0.2rem 1rem;
+      margin-right: 1rem;
+      border-radius: 2rem;
+      font-size: 0.8rem;
+    }
+  }
+
+  .detalle-inmueble-precio {
+    margin-left: cap-font-size(16px);
+
+    h4 {
+      color: var(--color-secundario);
+      font-size: cap-font-size(16px);
+    }
+
+    .precio-inmueble {
+      font-size: cap-font-size(24px);
+      font-weight: 700;
+      color: var(--color-tercer);
+    }
+  }
+}

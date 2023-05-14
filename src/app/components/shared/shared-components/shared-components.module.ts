@@ -8,10 +8,14 @@ import { ContactoComponent } from './contacto/contacto.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CarouselAboutComponent } from './carousel/carousel-about.component';
-import { SharedPrimeNgModule } from '../shared-primeng-modules/shared-primeng.module';
+
 import { SjModalComponent } from './sj-modal/sj-modal.component';
 import { SjModalServiciosComponent } from './sj-modal-servicios/sj-modal-servicios.component';
 import { SjFormInscripcionComponent } from './sj-form-inscripcion/sj-form-inscripcion.component';
+import { SharedPrimengModulesModule } from '../shared-primeng-modules/shared-primeng-modules.module';
+
+
+
 
 @NgModule({
   declarations: [
@@ -24,9 +28,9 @@ import { SjFormInscripcionComponent } from './sj-form-inscripcion/sj-form-inscri
     CarouselAboutComponent,
     SjModalComponent,
     SjModalServiciosComponent,
-    SjFormInscripcionComponent,
+    SjFormInscripcionComponent
   ],
-  imports: [CommonModule, ReactiveFormsModule, FormsModule, SharedPrimeNgModule, SharedPrimeNgModule],
+  imports: [CommonModule, ReactiveFormsModule, FormsModule, SharedPrimengModulesModule],
   exports: [
     ServiciosComponent,
     CoPropiedadesComponent,
@@ -37,7 +41,7 @@ import { SjFormInscripcionComponent } from './sj-form-inscripcion/sj-form-inscri
     CarouselAboutComponent,
     SjModalComponent,
     SjModalServiciosComponent,
-    SjFormInscripcionComponent,
+    SjFormInscripcionComponent
   ],
 })
 export class SharedComponentsModule {}

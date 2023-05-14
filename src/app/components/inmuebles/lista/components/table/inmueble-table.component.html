@@ -1,0 +1,118 @@
+<div class="row justify-content-center">
+  <div class="col-12">
+    <p-table
+      #tableHistorialTramites
+      [value]="listaInmuebles"
+      [(selection)]="selectedListaInmuebles"
+      dataKey="id"
+      styleClass="p-datatable-custom"
+      [rowHover]="true"
+      [rows]="10"
+      [showCurrentPageReport]="true"
+      [rowsPerPageOptions]="[5, 10, 25, 50]"
+      [loading]="loading"
+      [paginator]="true"
+      currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords} entradas"
+      [filterDelay]="0"
+      [globalFilterFields]="['tipoInmueble', 'tipoPublicacion', 'area', 'precio']"
+      id="table-inmueble"
+    >
+      <ng-template pTemplate="caption">
+        <div class="table-header">
+          Buscar inmueble
+          <span class="p-input-icon-left">
+            <i class="pi pi-search"></i>
+            <input pInputText type="text" (input)="filterGlobalListaInmuebles($event, 'contains')" placeholder="Buscar ..." />
+          </span>
+        </div>
+      </ng-template>
+      <ng-template pTemplate="header">
+        <tr>
+          <th pSortableColumn="tipoInmueble">Tipo Inmueble <p-sortIcon field="tipoInmueble"></p-sortIcon></th>
+          <th pSortableColumn="tipoPublicacion">Tipo Publicación <p-sortIcon field="tipoPublicacion"></p-sortIcon></th>
+          <th pSortableColumn="area">Área del predio <p-sortIcon field="area"></p-sortIcon></th>
+          <th pSortableColumn="precio">Precio <p-sortIcon field="precio"></p-sortIcon></th>
+          <th class="text-center">Más detalles</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-inmueble>
+        <tr class="p-selectable-row">
+          <td>
+            <span class="p-column-title fw-bold">Tipo Inmueble</span>
+            <span class="">{{ inmueble.tipoInmueble }}</span>
+          </td>
+          <td>
+            <span class="p-column-title fw-bold">Tipo Publicación</span>
+            <span class="">{{ inmueble.tipoPublicacion }}</span>
+          </td>
+          <td>
+            <span class="p-column-title fw-bold">Área del predio</span>
+            <span class="">{{ inmueble.area + ' m' }}<sup>2</sup> </span>
+          </td>
+          <td>
+            <span class="p-column-title fw-bold">Precio</span>
+            <span class="">{{ inmueble.precio | currency : 'USD' : 'symbol' : '1.0-0' }}</span>
+          </td>
+          <td class="text-center">
+            <span class="p-column-title fw-bold">Opciones</span>
+            <span class="">
+              <ng-container *ngIf="inmueble.fotos.length; else blockUploadImg">
+                <ng-container *ngIf="inmueble.fotos.length < tamanioUploadPhoto">
+                  <i
+                    class="icon-custom fa-solid fa-upload"
+                    (click)="subirImg(inmueble)"
+                    pTooltip="Anexar más imágenes"
+                    tooltipPosition="top"
+                  ></i>
+                </ng-container>
+                <i class="icon-custom fa-solid fa-eye" (click)="mostrarImg(inmueble)" pTooltip="Ver detalle" tooltipPosition="top"></i>
+                <i
+                  class="icon-custom fa-solid fa-images"
+                  pTooltip="Actualizar imágenes"
+                  tooltipPosition="top"
+                  (click)="actualizarImagenes(inmueble)"
+                ></i>
+              </ng-container>
+              <ng-template #blockUploadImg>
+                <i
+                  class="icon-custom fa-solid fa-file-arrow-up"
+                  (click)="subirImg(inmueble)"
+                  pTooltip="Anexar imágenes"
+                  tooltipPosition="top"
+                ></i>
+              </ng-template>
+              <i
+                class="icon-custom fa-solid fa-pen-to-square"
+                (click)="actionEditInmueble(inmueble.id)"
+                pTooltip="Actualizar inmueble"
+                tooltipPosition="top"
+              ></i>
+            </span>
+          </td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="emptymessage">
+        <tr>
+          <td colspan="5" class="text-center">No existen datos para mostrar.</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>
+
+<app-modal-inmueble [visible]="visible" (eventCloseDialogModal)="closeModalUpload($event)">
+  <app-inmueble-subir-archivos
+    [idInmueble]="idInmueble"
+    [idUsuario]="idUsuario"
+    [sizeFotos]="sizeFotos"
+    *ngIf="showUpload"
+  ></app-inmueble-subir-archivos>
+</app-modal-inmueble>
+
+<app-modal-inmueble [visible]="showModalUpdateImg" (eventCloseDialogModal)="closeModalUpload($event)">
+  <app-inmuebles-fotos-update
+    [listaFotos]="listaFotos"
+    (actionGuardarImg)="onSubmitModificarImg($event)"
+    *ngIf="showBlockUpImg"
+  ></app-inmuebles-fotos-update>
+</app-modal-inmueble>

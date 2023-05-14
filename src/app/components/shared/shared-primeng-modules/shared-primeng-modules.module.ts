@@ -41,6 +41,10 @@ import { TabMenuModule } from 'primeng/tabmenu';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { BlockUIModule } from 'primeng/blockui';
+import { StepsModule } from 'primeng/steps';
+import { GalleriaModule } from 'primeng/galleria';
+import { TooltipModule } from 'primeng/tooltip';
+import { ImageModule } from 'primeng/image';
 
 const modulePrimeng = [
   InputTextModule,
@@ -78,12 +82,37 @@ const modulePrimeng = [
   InputNumberModule,
   ProgressSpinnerModule,
   BlockUIModule,
+  StepsModule,
+  GalleriaModule,
+  TooltipModule,
+  ImageModule,
 ];
 
+/** Components Custom */
+import { CapModalConfirmacionComponent } from './cap-modal-confirmacion/cap-modal-confirmacion.component';
+import { CapFormFielsetComponent } from './cap-form-fielset/cap-form-fielset.component';
+import { CapFormInputComponent } from './cap-form-input/cap-form-input.component';
+import { CapFormDropdownComponent } from './cap-form-dropdown/cap-form-dropdown.component';
+import { CapFormDropdownCustomComponent } from './cap-form-dropdown-custom/cap-form-dropdown-custom.component';
+
 @NgModule({
-  declarations: [],
+  declarations: [
+    CapModalConfirmacionComponent,
+    CapFormFielsetComponent,
+    CapFormInputComponent,
+    CapFormDropdownComponent,
+    CapFormDropdownCustomComponent,
+  ],
   imports: [TranslateModule.forChild({}), CommonModule, FormsModule, ReactiveFormsModule, ...modulePrimeng],
-  exports: [CommonModule, ...modulePrimeng],
+  exports: [
+    CommonModule,
+    ...modulePrimeng,
+    CapModalConfirmacionComponent,
+    CapFormFielsetComponent,
+    CapFormInputComponent,
+    CapFormDropdownComponent,
+    CapFormDropdownCustomComponent,
+  ],
   providers: [MessageService, ConfirmationService],
 })
-export class SharedPrimeNgModule {}
+export class SharedPrimengModulesModule {}

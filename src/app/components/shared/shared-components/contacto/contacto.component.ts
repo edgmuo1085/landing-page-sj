@@ -26,7 +26,7 @@ export class ContactoComponent implements OnInit {
 
   enviar() {
     if (this.formContact.invalid) {
-      this.toastService.showToastCustom('Contácto', 'Debe llenar todos los datos.', 'error');
+      this.toastService.showToast('Contácto', 'Debe llenar todos los datos.', 'error');
       return;
     }
     this.loading = true;
@@ -41,7 +41,7 @@ export class ContactoComponent implements OnInit {
     const json = JSON.stringify(params);
     this.correoService.enviarCorreo(json).subscribe({
       next: response => {
-        this.toastService.showToastCustom('Contácto', 'Mensaje enviado correctamente');
+        this.toastService.showToast('Contácto', 'Mensaje enviado correctamente');
         this.loading = false;
         this.formContact.reset();
       },

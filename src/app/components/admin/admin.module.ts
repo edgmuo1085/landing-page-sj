@@ -9,7 +9,8 @@ import { RegistroComponent } from './registro/registro.component';
 import { BotonesComponent } from './botones/botones.component';
 import { ModalActualizarComponent } from './modal-actualizar/modal-actualizar.component';
 import { SharedComponentsModule } from '../shared/shared-components/shared-components.module';
-import { SharedPrimeNgModule } from '../shared/shared-primeng-modules/shared-primeng.module';
+import { SharedPrimengModulesModule } from '../shared/shared-primeng-modules/shared-primeng-modules.module';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { SharedPrimeNgModule } from '../shared/shared-primeng-modules/shared-pri
     ReactiveFormsModule,
     HttpClientModule,
     SharedComponentsModule,
-    SharedPrimeNgModule,
+    SharedPrimengModulesModule,
   ],
 })
 export class AdminModule {}
