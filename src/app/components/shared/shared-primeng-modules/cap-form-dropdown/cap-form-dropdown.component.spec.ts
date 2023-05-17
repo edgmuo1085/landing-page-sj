@@ -8,9 +8,8 @@ describe('CapFormDropdownComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CapFormDropdownComponent ]
-    })
-    .compileComponents();
+      declarations: [CapFormDropdownComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(CapFormDropdownComponent);
     component = fixture.componentInstance;

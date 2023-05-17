@@ -1,7 +1,6 @@
 import { Component, Input, OnChanges, SimpleChanges, ViewEncapsulation } from '@angular/core';
 import { ResponseArchivo } from 'src/app/components/interfaces/respose-archivo.interface';
 
-
 @Component({
   selector: 'app-galeria-inmueble',
   templateUrl: './galeria-inmueble.component.html',

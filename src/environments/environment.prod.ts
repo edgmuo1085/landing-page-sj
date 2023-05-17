@@ -14,7 +14,6 @@ const constants = {
   ...nombresDocumentosAvaluoHipoteca,
 };
 
-
 export const environment = {
   production: true,
   ...constants,
@@ -26,5 +25,4 @@ export const environment = {
   rutaDoc: 'documentos/',
   rutaImgPhp: 'imagenes',
   rutaDocPhp: 'documentos',
-
 };

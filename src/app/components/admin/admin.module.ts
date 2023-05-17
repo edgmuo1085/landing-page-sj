@@ -11,21 +11,8 @@ import { ModalActualizarComponent } from './modal-actualizar/modal-actualizar.co
 import { SharedComponentsModule } from '../shared/shared-components/shared-components.module';
 import { SharedPrimengModulesModule } from '../shared/shared-primeng-modules/shared-primeng-modules.module';
 
-
 @NgModule({
-  declarations: [
-    DashboardComponent,
-    RegistroComponent,
-    BotonesComponent,
-    ModalActualizarComponent,
-  ],
-  imports: [
-    CommonModule,
-    AdminRoutingModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    SharedComponentsModule,
-    SharedPrimengModulesModule,
-  ],
+  declarations: [DashboardComponent, RegistroComponent, BotonesComponent, ModalActualizarComponent],
+  imports: [CommonModule, AdminRoutingModule, ReactiveFormsModule, HttpClientModule, SharedComponentsModule, SharedPrimengModulesModule],
 })
 export class AdminModule {}

@@ -8,9 +8,8 @@ describe('CoPropiedadesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CoPropiedadesComponent ]
-    })
-    .compileComponents();
+      declarations: [CoPropiedadesComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(CoPropiedadesComponent);
     component = fixture.componentInstance;

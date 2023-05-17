@@ -7,7 +7,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedComponentsModule } from '../shared/shared-components/shared-components.module';
 import { SharedPrimengModulesModule } from '../shared/shared-primeng-modules/shared-primeng-modules.module';
 
-
 @NgModule({
   declarations: [HomeComponent],
   imports: [CommonModule, HomeRoutingModule, ReactiveFormsModule, FormsModule, SharedComponentsModule, SharedPrimengModulesModule],

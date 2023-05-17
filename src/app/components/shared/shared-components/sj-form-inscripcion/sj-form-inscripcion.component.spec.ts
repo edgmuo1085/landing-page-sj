@@ -8,9 +8,8 @@ describe('SjFormInscripcionComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SjFormInscripcionComponent ]
-    })
-    .compileComponents();
+      declarations: [SjFormInscripcionComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(SjFormInscripcionComponent);
     component = fixture.componentInstance;

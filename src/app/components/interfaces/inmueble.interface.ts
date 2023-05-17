@@ -31,7 +31,7 @@ export class InmuebleModel implements Inmueble {
     public direccion: string,
     public id: number,
     public copropiedad: string
-  ) { }
+  ) {}
 }
 
 export type InmuebleRegistro = Omit<Inmueble, 'id'>;
@@ -51,5 +51,5 @@ export class InmuebleRegistroModel implements InmuebleRegistro {
     public tipoCons: string,
     public direccion: string,
     public copropiedad: string
-  ) { }
+  ) {}
 }

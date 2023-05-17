@@ -28,7 +28,7 @@ export class InmuebleRegistrarComponent implements OnInit {
   estadoInmueble: ParametrosShared[] = environment.estadoInmueble;
   tipoPublicacion: ParametrosShared[] = environment.tipoPublicacion;
   tipoConstruccion: ParametrosShared[] = environment.tipoConstruccion;
-  copropiedad:ParametrosShared[] = environment.listaCopropiedad;
+  copropiedad: ParametrosShared[] = environment.listaCopropiedad;
   loading: boolean = false;
 
   constructor(
@@ -38,7 +38,6 @@ export class InmuebleRegistrarComponent implements OnInit {
     private propiedadesService: PropiedadesService,
     private toastCustomService: ToastCustomService
   ) {
-  
     this.activatedRoute.params.subscribe((params: Params) => {
       if (params['idInmueble']) {
         this.idInmuebleUpdate = params['idInmueble'];
@@ -64,7 +63,7 @@ export class InmuebleRegistrarComponent implements OnInit {
       tipoPublicacion: ['', [Validators.required]],
       tipoConstruccion: ['', [Validators.required]],
       direccion: ['', [Validators.required]],
-      copropiedad:['',[Validators.required]],
+      copropiedad: ['', [Validators.required]],
     });
   }
 
@@ -96,7 +95,7 @@ export class InmuebleRegistrarComponent implements OnInit {
       this.formRegistroInmueble.get('tipoPublicacion')?.value,
       this.formRegistroInmueble.get('tipoConstruccion')?.value,
       this.formRegistroInmueble.get('direccion')?.value,
-      this.formRegistroInmueble.get('copropiedad')?.value,
+      this.formRegistroInmueble.get('copropiedad')?.value
     );
     this.propiedadesService.crearInmueble(registroInmueble).subscribe({
       next: response => {
@@ -143,7 +142,7 @@ export class InmuebleRegistrarComponent implements OnInit {
       this.formRegistroInmueble.get('tipoConstruccion')?.value,
       this.formRegistroInmueble.get('direccion')?.value,
       +this.idInmuebleUpdate,
-      this.formRegistroInmueble.get('copropiedad')?.value,
+      this.formRegistroInmueble.get('copropiedad')?.value
     );
     this.propiedadesService.crearInmueble(actualizarInmuebleData).subscribe({
       next: response => {
@@ -187,7 +186,7 @@ export class InmuebleRegistrarComponent implements OnInit {
           tipoPublicacion: response.tipoPublicacion,
           tipoConstruccion: response.tipoCons,
           direccion: response.direccion,
-          copropiedad: response.copropiedad
+          copropiedad: response.copropiedad,
         });
       },
       error: err => {

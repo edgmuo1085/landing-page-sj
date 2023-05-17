@@ -82,5 +82,4 @@ export class PropiedadesService {
     const url = `${environment.URL_API}predio/filtros/${filtro}`;
     return this.http.get<ResponseInmueble[]>(url);
   }
-
 }

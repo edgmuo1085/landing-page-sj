@@ -30,7 +30,7 @@ export class InmuebleTableComponent {
   idInmueble: number = 0;
   listaFotos: ResponseArchivo[] = [];
   uploadedFiles: ImagesInmuebleUp[] = [];
-  fotoInsertar: ArchivoInmuebleUp = new ArchivoInmuebleUpModel('', '', 0, '', '',0);
+  fotoInsertar: ArchivoInmuebleUp = new ArchivoInmuebleUpModel('', '', 0, '', '', 0);
   tamanioUploadPhoto = environment.postMaxUploadPhoto;
 
   constructor(

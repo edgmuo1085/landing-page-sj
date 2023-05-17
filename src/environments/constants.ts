@@ -1,4 +1,3 @@
-
 export const parametrosSelect = {
   tiposInmuebles: [
     {
@@ -298,21 +297,21 @@ export const parametrosSelect = {
       label: 'CONJUNTO RESIDENCIAL SENDAI P.H.',
     },
     {
-      value:'PARCELACIÓN TERRA NATURA P.H.',
-      label:'PARCELACIÓN TERRA NATURA P.H.',
+      value: 'PARCELACIÓN TERRA NATURA P.H.',
+      label: 'PARCELACIÓN TERRA NATURA P.H.',
     },
     {
-      value:'CONJUNTO RESIDENCIAL EDIFICIO TORRE VERSALLES P.H.',
-      label:'CONJUNTO RESIDENCIAL EDIFICIO TORRE VERSALLES P.H.',
+      value: 'CONJUNTO RESIDENCIAL EDIFICIO TORRE VERSALLES P.H.',
+      label: 'CONJUNTO RESIDENCIAL EDIFICIO TORRE VERSALLES P.H.',
     },
     {
-      value:'LISBOA CONJUNTO RESIDENCIAL.',
-      label:'LISBOA CONJUNTO RESIDENCIAL.',
+      value: 'LISBOA CONJUNTO RESIDENCIAL.',
+      label: 'LISBOA CONJUNTO RESIDENCIAL.',
     },
     {
-      value:'CONDOMINIO SAN NICOLAS DE LLANOGRANDE P.H.',
-      label:'CONDOMINIO SAN NICOLAS DE LLANOGRANDE P.H.',
-    }
+      value: 'CONDOMINIO SAN NICOLAS DE LLANOGRANDE P.H.',
+      label: 'CONDOMINIO SAN NICOLAS DE LLANOGRANDE P.H.',
+    },
   ],
 };
 

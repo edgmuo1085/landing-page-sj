@@ -7,7 +7,7 @@ import { ImgCarousel } from 'src/app/components/models/images-carousel.interface
   styleUrls: ['./carousel-about.component.scss'],
 })
 export class CarouselAboutComponent {
-  linkPago:string='';
+  linkPago: string = '';
   visible: boolean = false;
   responsiveOptions: any[] = [];
   @Input() carouselArray: ImgCarousel[] = [];
@@ -32,8 +32,8 @@ export class CarouselAboutComponent {
     ];
   }
 
-  abrirModal(param:string) {
-    this.linkPago=param;
+  abrirModal(param: string) {
+    this.linkPago = param;
     this.visible = true;
   }
 

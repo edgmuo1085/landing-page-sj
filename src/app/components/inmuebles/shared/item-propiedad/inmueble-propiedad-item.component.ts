@@ -11,9 +11,7 @@ export class InmueblePropiedadItemComponent implements OnInit {
   @Input() inmublePropiedad: ResponseInmueble = {} as ResponseInmueble;
   isLogging: string = '';
 
-  constructor(private dataUserService: DataUserService) {
-
-  }
+  constructor(private dataUserService: DataUserService) {}
 
   ngOnInit(): void {}
 }

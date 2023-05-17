@@ -101,11 +101,7 @@
 </div>
 
 <app-modal-inmueble [visible]="visible" (eventCloseDialogModal)="closeModalUpload($event)">
-  <app-inmueble-subir-archivos
-    [idInmueble]="idInmueble"
-    [sizeFotos]="sizeFotos"
-    *ngIf="showUpload"
-  ></app-inmueble-subir-archivos>
+  <app-inmueble-subir-archivos [idInmueble]="idInmueble" [sizeFotos]="sizeFotos" *ngIf="showUpload"></app-inmueble-subir-archivos>
 </app-modal-inmueble>
 
 <app-modal-inmueble [visible]="showModalUpdateImg" (eventCloseDialogModal)="closeModalUpload($event)">

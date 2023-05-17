@@ -14,9 +14,9 @@ export class InmueblesFiltrosComponent implements OnInit {
   tiposInmuebles: ParametrosShared[] = environment.tiposInmuebles;
   estadosInmueble: ParametrosShared[] = environment.estadoInmueble;
   listaHabitaciones: ParametrosShared[] = environment.listaHabitaciones;
-    tipoCopropiedad: ParametrosShared[] =environment.listaCopropiedad;
+  tipoCopropiedad: ParametrosShared[] = environment.listaCopropiedad;
   tipoInmueble: string = '';
-  copropiedad:string='';
+  copropiedad: string = '';
   estado: string = '';
   habitaciones: string = '';
 

@@ -14,9 +14,7 @@ export class InmuebleListaComponent implements OnInit {
   loading: boolean = false;
   idUsuario: number = 0;
 
-  constructor(private propiedadesService: PropiedadesService, private dataUserService: DataUserService) {
-  
-  }
+  constructor(private propiedadesService: PropiedadesService, private dataUserService: DataUserService) {}
 
   ngOnInit(): void {
     this.getListaInmuebles();

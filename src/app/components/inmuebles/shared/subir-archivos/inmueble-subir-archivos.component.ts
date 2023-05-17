@@ -22,10 +22,7 @@ export class InmuebleSubirArchivosComponent {
   multiple: boolean = true;
   uploadedFiles: ImagesInmuebleUp[] = [];
 
-  constructor(
-    private propiedadesService: PropiedadesService,
-    private toastCustomService: ToastCustomService,
-  ) {}
+  constructor(private propiedadesService: PropiedadesService, private toastCustomService: ToastCustomService) {}
 
   ngOnDestroy(): void {
     this.uploadedFiles = [];

@@ -27,11 +27,11 @@ import { InmuebleSubirArchivosComponent } from './shared/subir-archivos/inmueble
 import { InmuebleDetalleComponent } from './detalle/inmueble-detalle.component';
 import { LayoutAuthComponent } from './shared/layout-auth/layout-auth.component';
 
-
-
-
 @NgModule({
-  declarations: [InmueblesComponent, ArriendoComponent, VentaComponent,
+  declarations: [
+    InmueblesComponent,
+    ArriendoComponent,
+    VentaComponent,
     InmuebleRegistrarComponent,
     InmuebleListaComponent,
     InmuebleMenuComponent,
@@ -41,15 +41,14 @@ import { LayoutAuthComponent } from './shared/layout-auth/layout-auth.component'
     InmueblesFiltrosComponent,
     InmueblePropiedadItemComponent,
     ModalInmuebleComponent,
-    NavbarComponent, HomeServiciosComponent, LayoutAuthComponent,GaleriaInmuebleComponent, InmuebleSubirArchivosComponent, InmuebleDetalleComponent],
-  imports: [
-    CommonModule,
-    InmueblesRoutingModule,
-    ReactiveFormsModule,
-    SharedModulesModule,
-    SharedPrimengModulesModule, FormsModule
-
+    NavbarComponent,
+    HomeServiciosComponent,
+    LayoutAuthComponent,
+    GaleriaInmuebleComponent,
+    InmuebleSubirArchivosComponent,
+    InmuebleDetalleComponent,
   ],
-  exports: [NavbarComponent]
+  imports: [CommonModule, InmueblesRoutingModule, ReactiveFormsModule, SharedModulesModule, SharedPrimengModulesModule, FormsModule],
+  exports: [NavbarComponent],
 })
-export class InmueblesModule { }
+export class InmueblesModule {}

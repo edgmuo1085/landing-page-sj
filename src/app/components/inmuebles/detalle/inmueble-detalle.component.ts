@@ -82,8 +82,5 @@ export class InmuebleDetalleComponent implements OnInit {
     }
   }
 
-  arriendo() {
-    
-   
-  }
+  arriendo() {}
 }

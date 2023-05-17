@@ -8,7 +8,7 @@ import { PropiedadesService } from '../../shared/shared-services/propiedades.ser
 @Component({
   selector: 'app-venta',
   templateUrl: './venta.component.html',
-  styleUrls: ['./venta.component.scss']
+  styleUrls: ['./venta.component.scss'],
 })
 export class VentaComponent {
   propiedadesVenta: ResponseInmueble[] = [];
@@ -78,4 +78,3 @@ export class VentaComponent {
     document.body.removeChild(aLink);
   }
 }
-

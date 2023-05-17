@@ -8,9 +8,8 @@ describe('CapFormInputComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CapFormInputComponent ]
-    })
-    .compileComponents();
+      declarations: [CapFormInputComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(CapFormInputComponent);
     component = fixture.componentInstance;

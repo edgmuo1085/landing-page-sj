@@ -25,5 +25,4 @@ export const environment = {
   rutaDoc: 'documentos/',
   rutaImgPhp: 'imagenes',
   rutaDocPhp: 'documentos',
-
 };

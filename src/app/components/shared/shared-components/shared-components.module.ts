@@ -14,9 +14,6 @@ import { SjModalServiciosComponent } from './sj-modal-servicios/sj-modal-servici
 import { SjFormInscripcionComponent } from './sj-form-inscripcion/sj-form-inscripcion.component';
 import { SharedPrimengModulesModule } from '../shared-primeng-modules/shared-primeng-modules.module';
 
-
-
-
 @NgModule({
   declarations: [
     ServiciosComponent,
@@ -28,7 +25,7 @@ import { SharedPrimengModulesModule } from '../shared-primeng-modules/shared-pri
     CarouselAboutComponent,
     SjModalComponent,
     SjModalServiciosComponent,
-    SjFormInscripcionComponent
+    SjFormInscripcionComponent,
   ],
   imports: [CommonModule, ReactiveFormsModule, FormsModule, SharedPrimengModulesModule],
   exports: [
@@ -41,7 +38,7 @@ import { SharedPrimengModulesModule } from '../shared-primeng-modules/shared-pri
     CarouselAboutComponent,
     SjModalComponent,
     SjModalServiciosComponent,
-    SjFormInscripcionComponent
+    SjFormInscripcionComponent,
   ],
 })
 export class SharedComponentsModule {}
