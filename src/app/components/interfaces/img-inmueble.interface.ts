@@ -5,7 +5,6 @@ export interface ImagesInmuebleUp {
   nombreArchivo: string;
   nombreSinExt: string;
   formato: string;
-  idUsuario: number;
   idInmueble: number;
   archivo: string;
   tipoDocumento: string;

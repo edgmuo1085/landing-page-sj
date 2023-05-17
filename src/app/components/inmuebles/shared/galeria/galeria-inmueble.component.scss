@@ -1,16 +1,16 @@
-@import 'layout.functions';
+
 
 .galeria-img-inmueble {
   width: 100%;
-  height: cap-font-size(408px);
+  height: cap-font-size(400px);
   object-fit: cover;
 }
 
 .galeria-img-inmueble-full {
-  width: 60%;
+  width: 45%;
   display: block;
 }
 
 button.btn-custom {
-  width: 100%;
+  width: 45%;
 }

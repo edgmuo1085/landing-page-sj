@@ -12,7 +12,7 @@ export interface Inmueble {
   tipoCons: string;
   direccion: string;
   id: number;
-  listaCopropiedad: string;
+  copropiedad: string;
 }
 
 export class InmuebleModel implements Inmueble {
@@ -30,7 +30,7 @@ export class InmuebleModel implements Inmueble {
     public tipoCons: string,
     public direccion: string,
     public id: number,
-    public listaCopropiedad: string
+    public copropiedad: string
   ) { }
 }
 
@@ -50,6 +50,6 @@ export class InmuebleRegistroModel implements InmuebleRegistro {
     public tipoPublicacion: string,
     public tipoCons: string,
     public direccion: string,
-    public listaCopropiedad: string
+    public copropiedad: string
   ) { }
 }

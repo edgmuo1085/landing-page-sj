@@ -19,7 +19,6 @@ import { environment } from 'src/environments/environment';
 export class InmuebleTableComponent {
   @Input() listaInmuebles: ResponseInmueble[] = [];
   @Input() selectedListaInmuebles: ResponseInmueble[] = [];
-  @Input() idUsuario: number = 0;
   @Input() loading: boolean = false;
   @Output() actionCargarLista: EventEmitter<boolean> = new EventEmitter<boolean>();
   @ViewChild('tableListaInmuebles') tableListaInmuebles!: Table;
@@ -31,7 +30,7 @@ export class InmuebleTableComponent {
   idInmueble: number = 0;
   listaFotos: ResponseArchivo[] = [];
   uploadedFiles: ImagesInmuebleUp[] = [];
-  fotoInsertar: ArchivoInmuebleUp = new ArchivoInmuebleUpModel('', '', 0, 0, '', '', 0);
+  fotoInsertar: ArchivoInmuebleUp = new ArchivoInmuebleUpModel('', '', 0, '', '',0);
   tamanioUploadPhoto = environment.postMaxUploadPhoto;
 
   constructor(
@@ -112,14 +111,12 @@ export class InmuebleTableComponent {
         nombreArchivo: `${idUnique}.${extension}`,
         nombreSinExt: `${idUnique}`,
         formato: file.type,
-        idUsuario: this.idUsuario,
         idInmueble: this.idInmueble,
         archivo: file.type,
         tipoDocumento: environment.rutaImg,
       };
       this.fotoInsertar.nombreArchivo = `${idUnique}.${extension}`;
       this.fotoInsertar.formato = file.type;
-      this.fotoInsertar.idUsuario = fotoInfo.idUsuario;
       this.fotoInsertar.idInmueble = fotoInfo.idInmueble;
       this.fotoInsertar.archivo = 'base';
       this.fotoInsertar.tipoDocumento = environment.rutaImg;

@@ -13,7 +13,6 @@ import { environment } from 'src/environments/environment';
   encapsulation: ViewEncapsulation.None,
 })
 export class InmuebleSubirArchivosComponent {
-  @Input() idUsuario: number = 0;
   @Input() idInmueble: number = 0;
   @Input() sizeFotos: number = environment.postMaxUploadPhoto;
   @Output() actionCargarImg: EventEmitter<boolean> = new EventEmitter<boolean>();
@@ -51,7 +50,6 @@ export class InmuebleSubirArchivosComponent {
         nombreArchivo: `${extension}`,
         nombreSinExt: ``,
         formato: file.type,
-        idUsuario: this.idUsuario,
         idInmueble: this.idInmueble,
         archivo: file.type,
         tipoDocumento: environment.rutaImg,
@@ -99,7 +97,6 @@ export class InmuebleSubirArchivosComponent {
     const fotoInsertar: ArchivoInmueble = new ArchivoInmuebleModel(
       item.nombreArchivo,
       item.formato,
-      item.idUsuario,
       item.idInmueble,
       item.archivo,
       item.tipoDocumento

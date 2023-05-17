@@ -28,7 +28,7 @@ export class InmuebleRegistrarComponent implements OnInit {
   estadoInmueble: ParametrosShared[] = environment.estadoInmueble;
   tipoPublicacion: ParametrosShared[] = environment.tipoPublicacion;
   tipoConstruccion: ParametrosShared[] = environment.tipoConstruccion;
-  listaCopropiedad:ParametrosShared[] = environment.listaCopropiedad;
+  copropiedad:ParametrosShared[] = environment.listaCopropiedad;
   loading: boolean = false;
 
   constructor(
@@ -64,7 +64,7 @@ export class InmuebleRegistrarComponent implements OnInit {
       tipoPublicacion: ['', [Validators.required]],
       tipoConstruccion: ['', [Validators.required]],
       direccion: ['', [Validators.required]],
-      listaCopropiedad:['',[Validators.required]],
+      copropiedad:['',[Validators.required]],
     });
   }
 
@@ -96,7 +96,7 @@ export class InmuebleRegistrarComponent implements OnInit {
       this.formRegistroInmueble.get('tipoPublicacion')?.value,
       this.formRegistroInmueble.get('tipoConstruccion')?.value,
       this.formRegistroInmueble.get('direccion')?.value,
-      this.formRegistroInmueble.get('listaCopropiedad')?.value,
+      this.formRegistroInmueble.get('copropiedad')?.value,
     );
     this.propiedadesService.crearInmueble(registroInmueble).subscribe({
       next: response => {
@@ -143,7 +143,7 @@ export class InmuebleRegistrarComponent implements OnInit {
       this.formRegistroInmueble.get('tipoConstruccion')?.value,
       this.formRegistroInmueble.get('direccion')?.value,
       +this.idInmuebleUpdate,
-      this.formRegistroInmueble.get('listaCopropiedad')?.value,
+      this.formRegistroInmueble.get('copropiedad')?.value,
     );
     this.propiedadesService.crearInmueble(actualizarInmuebleData).subscribe({
       next: response => {
@@ -187,7 +187,7 @@ export class InmuebleRegistrarComponent implements OnInit {
           tipoPublicacion: response.tipoPublicacion,
           tipoConstruccion: response.tipoCons,
           direccion: response.direccion,
-          listaCopropiedad: response.listaCopropiedad
+          copropiedad: response.copropiedad
         });
       },
       error: err => {
