@@ -17,8 +17,6 @@ export class CoPropiedadesComponent {
   getFotosCarousel() {
     this.usuarioService.getPhotosCarousel().subscribe({
       next: response => {
-        console.log(response);
-
         this.carouselArray = response;
       },
     });

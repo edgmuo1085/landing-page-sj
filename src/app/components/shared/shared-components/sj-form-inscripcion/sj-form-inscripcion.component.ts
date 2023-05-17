@@ -16,7 +16,6 @@ export class SjFormInscripcionComponent {
     this.closeDialogModal.emit(false);
   }
   urlPago() {
-    console.log('entra', this.linkPago);
     if (this.linkPago === '#') {
       this.toastService.showToast('Pago', 'Enlace de pago en construcción.', 'warn', 3000);
       return;
