@@ -1,20 +1,20 @@
 [
   {
-    "ruta": "./assets/img/propiedades/img-1.jpg"
+    "ruta": "./assets/image/propiedades/img-1.jpg"
   },
   {
-    "ruta": "./assets/img/propiedades/img-2.jpg"
+    "ruta": "./assets/image/propiedades/img-2.jpg"
   },
   {
-    "ruta": "./assets/img/propiedades/img-3.jpg"
+    "ruta": "./assets/image/propiedades/img-3.jpg"
   },
   {
-    "ruta": "./assets/img/propiedades/img-4.jpg"
+    "ruta": "./assets/image/propiedades/img-4.jpg"
   },
   {
-    "ruta": "./assets/img/propiedades/img-5.jpg"
+    "ruta": "./assets/image/propiedades/img-5.jpg"
   },
   {
-    "ruta": "./assets/img/propiedades/img-6.jpg"
+    "ruta": "./assets/image/propiedades/img-6.jpg"
   }
 ]

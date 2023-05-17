@@ -316,8 +316,8 @@ export const parametrosSelect = {
 };
 
 export const requisitosPropiedades = {
-  arriendoPropiedadImg: './assets/images/arriendo-capiro.png',
-  ventaPropiedadImg: './assets/images/venta-capiro.png',
+  arriendoPropiedadImg: './assets/image/arriendo-capiro.png',
+  ventaPropiedadImg: './assets/image/venta-capiro.png',
 };
 
 export const validacionPatterns = {

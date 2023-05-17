@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ImgCarousel } from 'src/app/components/models/images-carousel.interface';
+import { ImgCarousel } from 'src/app/components/interfaces/images-carousel.interface';
 
 @Component({
   selector: 'app-carousel-about',
