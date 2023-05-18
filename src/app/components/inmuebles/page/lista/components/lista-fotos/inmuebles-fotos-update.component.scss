@@ -1,0 +1,39 @@
+@import 'layout.functions';
+
+#update-img-inmueble {
+  .border-custom {
+    border: js-font-size(1px) solid var(--black-color-5);
+    border-radius: js-font-size(10px);
+  }
+  .custom-img-update {
+    width: 100%;
+    max-width: js-font-size(100px);
+  }
+
+  .images-uploaded {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: js-font-size(8px);
+    padding: js-font-size(5px);
+
+    .div1 {
+      grid-area: 1 / 1 / 2 / 2;
+      font-weight: 400;
+      font-size: js-font-size(10px);
+    }
+
+    .div2 {
+      grid-area: 1 / 2 / 2 / 6;
+
+      .p-progressbar {
+        font-size: js-font-size(10px);
+        height: js-font-size(15px);
+
+        &.p-progressbar-value {
+          background: var(--purple-color-1);
+        }
+      }
+    }
+  }
+}

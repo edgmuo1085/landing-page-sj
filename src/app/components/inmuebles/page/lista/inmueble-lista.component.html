@@ -1,0 +1,9 @@
+<app-inmueble-menu [actualizarInmueble]="false"></app-inmueble-menu>
+
+<div class="container">
+  <app-inmueble-table
+    [listaInmuebles]="listaInmuebles"
+    [loading]="loading"
+    (actionCargarLista)="actualizarListaGeneral($event)"
+  ></app-inmueble-table>
+</div>

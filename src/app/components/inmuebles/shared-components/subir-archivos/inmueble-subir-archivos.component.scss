@@ -1,0 +1,37 @@
+@import 'layout.functions';
+
+.blok-upload-files {
+  .upload-file-text {
+    text-align: center;
+    font-size: js-font-size(14px);
+    color: var(--color-secundario);
+    padding: js-font-size(16px) 0;
+  }
+}
+
+.images-uploaded {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: js-font-size(8px);
+  padding: js-font-size(5px);
+
+  .div1 {
+    grid-area: 1 / 1 / 2 / 2;
+    font-weight: 400;
+    font-size: js-font-size(10px);
+  }
+
+  .div2 {
+    grid-area: 1 / 2 / 2 / 6;
+
+    .p-progressbar {
+      font-size: js-font-size(10px);
+      height: js-font-size(15px);
+
+      &.p-progressbar-value {
+        background: var(--purple-color-1);
+      }
+    }
+  }
+}

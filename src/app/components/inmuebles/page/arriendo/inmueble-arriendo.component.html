@@ -1,0 +1,52 @@
+<div class="container" id="propiedades-arriendo-block">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-6 col-lg-6 text-center">
+      <div class="animate__animated animate__fadeInUp">
+        <br />
+        <h1 class="titulo-arriendo text-center">Arriendos</h1>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-12 my-3">
+      <app-inmuebles-filtros (actionFiltrosInmueble)="showPropiedades($event)"></app-inmuebles-filtros>
+    </div>
+  </div>
+  <div class="row justify-content-center my-4">
+    <div class="col-12 text-center text-md-start text-lg-start">
+      <button class="btn-requisitos" (click)="verRequisitos()">Ver requisitos</button>
+    </div>
+  </div>
+  <ng-container *ngIf="propiedadesArriendo.length; else sinPropiedadesArriendo">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-6 col-lg-4 my-3" *ngFor="let propiedad of propiedadesArriendo">
+        <app-inmueble-propiedad-item [inmublePropiedad]="propiedad"></app-inmueble-propiedad-item>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #sinPropiedadesArriendo>
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-6 col-lg-6 text-center">
+        <div class="animate__animated animate__fadeInUp">
+          <img src="./assets/image/sinRegistro.png" alt="sin-registro" class="img-fluid" />
+          <p class="titulo-sin-registro">No hay registros</p>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+
+  <app-modal-inmueble [visible]="display" (eventCloseDialogModal)="closeModalUpload($event)">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 text-center">
+          <img src="./assets/image/arriendo-capiro.jpg" alt="" class="img-fluid" />
+        </div>
+      </div>
+      <div class="row justify-content-end mt-4">
+        <div class="col-4 text-end">
+          <button class="btn-requisitos" (click)="downloadImg()">Descargar</button>
+        </div>
+      </div>
+    </div>
+  </app-modal-inmueble>
+</div>

@@ -1,3 +1,5 @@
+@import 'layout.functions';
+
 .layout-modal-login {
   .p-dialog-mask {
     background-color: rgba(0, 0, 0, 0.5);
@@ -9,7 +11,7 @@
         background-color: #fff;
       }
       .p-dialog-header {
-        padding: 0.5rem;
+        padding: js-font-size(8px);
       }
     }
   }

@@ -1,0 +1,21 @@
+<app-inmueble-menu [actualizarInmueble]="actualizarInmueble"></app-inmueble-menu>
+<div class="container-fluid">
+  <app-inmueble-form
+    [cargarImagenes]="cargarImagenes"
+    [formRegistroInmueble]="formRegistroInmueble"
+    [idInmueble]="idInmueble"
+    [loading]="loading"
+    [actualizarInmueble]="actualizarInmueble"
+    [msgTituloPage]="msgTituloPage"
+    [tiposInmuebles]="tiposInmuebles"
+    [listaHabitaciones]="listaHabitaciones"
+    [listaEstratos]="listaEstratos"
+    [listaBanios]="listaBanios"
+    [listaEleccionSiNo]="listaEleccionSiNo"
+    [estadoInmueble]="estadoInmueble"
+    [tipoPublicacion]="tipoPublicacion"
+    [tipoConstruccion]="tipoConstruccion"
+    [listaCopropiedad]="copropiedad"
+    (actionFormInmueble)="registrarActualizarInmueble()"
+  ></app-inmueble-form>
+</div>

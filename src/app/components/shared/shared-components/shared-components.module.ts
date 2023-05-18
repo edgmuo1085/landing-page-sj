@@ -8,7 +8,6 @@ import { ContactoComponent } from './contacto/contacto.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CarouselAboutComponent } from './carousel/carousel-about.component';
-
 import { SjModalComponent } from './sj-modal/sj-modal.component';
 import { SjModalServiciosComponent } from './sj-modal-servicios/sj-modal-servicios.component';
 import { SjFormInscripcionComponent } from './sj-form-inscripcion/sj-form-inscripcion.component';

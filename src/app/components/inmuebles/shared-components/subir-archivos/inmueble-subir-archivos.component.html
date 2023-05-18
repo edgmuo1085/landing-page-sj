@@ -1,0 +1,25 @@
+<div class="blok-upload-files animate__animated animate__fadeInDown">
+  <div class="upload-file-text">
+    <p>Presione el botón de seleccionar para adjuntar las fotos del inmueble.</p>
+    <p>Al terminar presione el botón de subir para terminar el registro</p>
+    <p>Debe recordar que solo se pueden subir {{ taminioUploadPhoto }} imágenes por propiedad</p>
+  </div>
+  <p-fileUpload
+    name="myfile[]"
+    [multiple]="multiple"
+    [customUpload]="true"
+    accept="image/*"
+    [maxFileSize]="1000000"
+    (uploadHandler)="onBasicUploadAuto($event)"
+    (onClear)="clearImg()"
+  >
+  </p-fileUpload>
+  <ng-container *ngFor="let imageProgress of uploadedFiles">
+    <div class="images-uploaded">
+      <div class="div1">{{ imageProgress.nameFile }}</div>
+      <div class="div2">
+        <p-progressBar [value]="imageProgress.progress"></p-progressBar>
+      </div>
+    </div>
+  </ng-container>
+</div>

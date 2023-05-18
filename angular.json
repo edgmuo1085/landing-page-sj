@@ -30,8 +30,12 @@
               "./node_modules/primeicons/primeicons.css",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "./node_modules/@fortawesome/fontawesome-free/css/all.css",
-              "src/assets/css/styles.scss"
+              "src/assets/css/layout/styles.sass",
+              "src/assets/css/theme/js.theme.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["src/assets/css/layout"]
+            },
             "scripts": ["node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"]
           },
           "configurations": {
@@ -111,7 +115,10 @@
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.scss"],
+            "styles": ["src/assets/css/layout/styles.sass", "src/assets/css/theme/js.theme.scss"],
+            "stylePreprocessorOptions": {
+              "includePaths": ["src/assets/css/layout"]
+            },
             "scripts": []
           }
         }

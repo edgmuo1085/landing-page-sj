@@ -1,0 +1,17 @@
+@import 'layout.functions';
+
+#filtros-propiedades {
+  .btn-limpiar-filtros {
+    background-color: var(--color-secundario);
+    border: 0;
+    color: #ffffff;
+    padding: js-font-size(5px) js-font-size(32px);
+    border-radius: js-font-size(8px);
+    font-size: js-font-size(13px);
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--color-tercer);
+    }
+  }
+}
