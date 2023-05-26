@@ -64,6 +64,7 @@ export class InmuebleRegistrarComponent implements OnInit {
       tipoConstruccion: ['', [Validators.required]],
       direccion: ['', [Validators.required]],
       copropiedad: ['', [Validators.required]],
+      numeroApartamento: ['', [Validators.required,Validators.pattern(environment.soloNumeros)]],
     });
   }
 
@@ -95,7 +96,8 @@ export class InmuebleRegistrarComponent implements OnInit {
       this.formRegistroInmueble.get('tipoPublicacion')?.value,
       this.formRegistroInmueble.get('tipoConstruccion')?.value,
       this.formRegistroInmueble.get('direccion')?.value,
-      this.formRegistroInmueble.get('copropiedad')?.value
+      this.formRegistroInmueble.get('copropiedad')?.value,
+      this.formRegistroInmueble.get('numeroApartamento')?.value
     );
     this.propiedadesService.crearInmueble(registroInmueble).subscribe({
       next: response => {
@@ -142,7 +144,8 @@ export class InmuebleRegistrarComponent implements OnInit {
       this.formRegistroInmueble.get('tipoConstruccion')?.value,
       this.formRegistroInmueble.get('direccion')?.value,
       +this.idInmuebleUpdate,
-      this.formRegistroInmueble.get('copropiedad')?.value
+      this.formRegistroInmueble.get('copropiedad')?.value,
+      this.formRegistroInmueble.get('numeroApartamento')?.value
     );
     this.propiedadesService.crearInmueble(actualizarInmuebleData).subscribe({
       next: response => {
@@ -159,7 +162,7 @@ export class InmuebleRegistrarComponent implements OnInit {
           'Propiedad registrada con éxito. Puede continuar anexando las imágenes al inmueble.'
         );
         this.formRegistroInmueble.reset();
-        this.router.navigate(['/inmuebles/listar']);
+        this.router.navigate(['/inmuebles/lista']);
       },
       error: err => {
         console.error(err);
@@ -187,6 +190,7 @@ export class InmuebleRegistrarComponent implements OnInit {
           tipoConstruccion: response.tipoCons,
           direccion: response.direccion,
           copropiedad: response.copropiedad,
+          numeroApartamento: response.numeroApartamento,
         });
       },
       error: err => {

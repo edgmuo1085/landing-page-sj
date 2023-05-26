@@ -32,8 +32,12 @@
                 </app-cap-form-fielset>
               </div>
               <div class="col-12 col-md-5 mb-3">
-                <app-cap-form-fielset [label]="'area'">
-                  <app-cap-form-input [formData]="formRegistroInmueble" [controlName]="'area'" [placeholder]="'Área del predio'">
+                <app-cap-form-fielset [label]="'numeroApartamento'">
+                  <app-cap-form-input
+                    [formData]="formRegistroInmueble"
+                    [controlName]="'numeroApartamento'"
+                    [placeholder]="'Numero Apto, oficina o local'"
+                  >
                   </app-cap-form-input>
                 </app-cap-form-fielset>
               </div>
@@ -141,8 +145,8 @@
                 </app-cap-form-fielset>
               </div>
               <div class="col-12 col-md-5 mb-3">
-                <app-cap-form-fielset [label]="'direccion'">
-                  <app-cap-form-input [formData]="formRegistroInmueble" [controlName]="'direccion'" [placeholder]="'Dirección'">
+                <app-cap-form-fielset [label]="'area'">
+                  <app-cap-form-input [formData]="formRegistroInmueble" [controlName]="'area'" [placeholder]="'Área del predio'">
                   </app-cap-form-input>
                 </app-cap-form-fielset>
               </div>
@@ -157,6 +161,12 @@
                     [placeholder]="'Copropiedades'"
                   >
                   </app-cap-form-dropdown>
+                </app-cap-form-fielset>
+              </div>
+              <div class="col-12 col-md-5 mb-3">
+                <app-cap-form-fielset [label]="'direccion'">
+                  <app-cap-form-input [formData]="formRegistroInmueble" [controlName]="'direccion'" [placeholder]="'Dirección'">
+                  </app-cap-form-input>
                 </app-cap-form-fielset>
               </div>
             </div>

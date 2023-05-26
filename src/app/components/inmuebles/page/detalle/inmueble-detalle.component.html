@@ -1,7 +1,7 @@
 <div class="container" id="section-detalle-inmueble">
   <div class="row justify-content-center mt-4">
     <div class="col-12">
-      <h1 class="detalle-titulo">{{ infoInmueble.tipoInmueble }}</h1>
+      <h1 class="detalle-titulo">{{ infoInmueble.tipoInmueble }} {{infoInmueble.numeroApartamento}}</h1>
     </div>
   </div>
   <div class="row justify-content-center mt-4">
@@ -36,6 +36,7 @@
       <div class="detalle-caracteristicas-two">
         <div class="detalle-badges">{{ infoInmueble.estado }}</div>
         <div class="detalle-badges">{{ infoInmueble.tipoInmueble }}</div>
+        <div class="detalle-badges">{{ infoInmueble.numeroApartamento }}</div>
         <div class="detalle-badges">{{ infoInmueble.tipoPublicacion }}</div>
       </div>
       <div class="detalle-inmueble-precio">

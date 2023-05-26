@@ -60,7 +60,9 @@ export class FormDetalleComponent implements OnChanges {
       texto: this.formInteresado.value.descripcion,
       direccionInmueble:this.infoInmueble.direccion,
       precioInmueble:this.infoInmueble.precio,
-      tipoInmueble:this.infoInmueble.tipoInmueble
+      tipoInmueble:this.infoInmueble.tipoInmueble,
+      numeroApartamento:this.infoInmueble.numeroApartamento,
+      copropiedadInmueble:this.infoInmueble.copropiedad
     };
 
     const json = JSON.stringify(params);

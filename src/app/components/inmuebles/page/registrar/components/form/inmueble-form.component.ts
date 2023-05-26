@@ -34,10 +34,8 @@ export class InmuebleFormComponent {
   }
 
   btnCancel() {
-    if (this.actualizarInmueble) {
-      this.router.navigate(['/inmuebles/listar']);
-      return;
-    }
+  
+      this.router.navigate(['/inmuebles/lista']);
     this.formRegistroInmueble.reset();
   }
 }

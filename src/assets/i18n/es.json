@@ -173,7 +173,8 @@
         "vehiculoMarcaDos": "Campo requerido",
         "vehiculoModeloDos": "Campo requerido",
         "vehiculoPlacaDos": "Campo requerido",
-        "observaciones": "Campo requerido"
+        "observaciones": "Campo requerido",
+        "numeroApartamento":  "Campo requerido"
       },
       "maxlength": {
         "area": "Ingresa máximo {{expected}} caracteres",
@@ -203,7 +204,8 @@
         "telefonoEmpresa": "Ingresa caracteres numéricos",
         "salario": "Ingresa caracteres numéricos",
         "otroIngreso": "Ingresa caracteres numéricos",
-        "egresosMensuales": "Ingresa caracteres numéricos"
+        "egresosMensuales": "Ingresa caracteres numéricos",
+        "numeroApartamento": "Ingresa caracteres numéricos"
       }
     }
   }
