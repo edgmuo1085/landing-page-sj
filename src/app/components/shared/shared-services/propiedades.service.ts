@@ -60,7 +60,7 @@ export class PropiedadesService {
   }
 
   getUploadPhotoHosting(formData: FormData): Observable<HttpEvent<void>> {
-    const url = `https://arrendamientoscapiro.com/up_imagen/form-capiro.php`;
+    const url = `https://sjasociadossas.com/up_imagen/form-sj.php`;
     const req = new HttpRequest('POST', url, formData, {
       reportProgress: true,
       responseType: 'json',

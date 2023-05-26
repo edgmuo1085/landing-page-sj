@@ -6,6 +6,7 @@ import { InmuebleArriendoComponent } from './page/arriendo/inmueble-arriendo.com
 import { LayoutComponent } from './shared-components/layout/layout.component';
 import { InmuebleListaComponent } from './page/lista/inmueble-lista.component';
 import { InmuebleRegistrarComponent } from './page/registrar/inmueble-registrar.component';
+import { InmuebleDetalleComponent } from './page/detalle/inmueble-detalle.component';
 
 const routes: Routes = [
   {
@@ -30,7 +31,7 @@ const routes: Routes = [
       },
       {
         path: 'detalle/:inmueble',
-        component: InmuebleRegistrarComponent,
+        component: InmuebleDetalleComponent,
       },
       {
         path: 'registrar',

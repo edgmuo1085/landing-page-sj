@@ -11,7 +11,7 @@ export class ToastCustomService {
     let severityCustom = severity ? severity : 'success';
     let lifeCustom = life ? life : 8000;
     this.messageService.add({
-      key: 'toast-capiro',
+      key: 'toast-layout',
       severity: severityCustom,
       summary: summary,
       detail: detail,

@@ -23,6 +23,7 @@ import { HomeInmueblesComponent } from './shared-components/home-inmuebles/home-
 import { GaleriaInmuebleComponent } from './shared-components/galeria/galeria-inmueble.component';
 import { ModalInmuebleComponent } from './shared-components/modal-inmueble/modal-inmueble.component';
 import { NavbarInmueblesComponent } from './shared-components/navbar-inmuebles/navbar-inmuebles.component';
+import { FormDetalleComponent } from './page/detalle/components/form/form-detalle.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { NavbarInmueblesComponent } from './shared-components/navbar-inmuebles/n
     GaleriaInmuebleComponent,
     ModalInmuebleComponent,
     NavbarInmueblesComponent,
+    FormDetalleComponent,
   ],
   imports: [CommonModule, InmueblesRoutingModule, ReactiveFormsModule, FormsModule, SharedComponentsModule, SharedPrimengModulesModule],
 })

@@ -44,15 +44,16 @@
       </div>
       <div class="d-flex justify-content-evenly mt-3">
         <div class="form-button" *ngIf="botonArriendo">
-          <button class="form-btn" type="button" (click)="arriendo()">Arrendar</button>
+          <button class="form-btn" type="button" (click)="abrirModal()">Arrendar</button>
         </div>
         <div class="form-button" *ngIf="botonVenta">
-          <button class="form-btn" type="button" (click)="arriendo()">Comprar</button>
-        </div>
-        <div class="form-button" *ngIf="botonContacto">
-          <button class="form-btn" type="button" (click)="arriendo()">Contactar</button>
+          <button class="form-btn" type="button" (click)="abrirModal()">Comprar</button>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<app-sjservicios-modal [visible]="mostrarModal" (eventCloseDialogModal)="cerrarModal($event)">
+  <app-form-detalle [botonArriendo]="arriendoTexto" [botonVenta]="ventaTexto" [infoInmueble]="infoInmueble" (actionCloseModal)="cerrarModal($event)"></app-form-detalle>
+</app-sjservicios-modal>

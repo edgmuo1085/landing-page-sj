@@ -2,6 +2,7 @@ import { HttpEventType } from '@angular/common/http';
 import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';
 import { ArchivoInmueble, ArchivoInmuebleModel } from 'src/app/components/interfaces/archivo-inmueble.interface';
 import { ImagesInmuebleUp } from 'src/app/components/interfaces/img-inmueble.interface';
+import { IdGenerateService } from 'src/app/components/shared/shared-services/id-generate.service';
 import { PropiedadesService } from 'src/app/components/shared/shared-services/propiedades.service';
 import { ToastCustomService } from 'src/app/components/shared/shared-services/toast-custom.service';
 import { environment } from 'src/environments/environment';
@@ -22,7 +23,7 @@ export class InmuebleSubirArchivosComponent {
   multiple: boolean = true;
   uploadedFiles: ImagesInmuebleUp[] = [];
 
-  constructor(private propiedadesService: PropiedadesService, private toastCustomService: ToastCustomService) {}
+  constructor(private propiedadesService: PropiedadesService, private toastCustomService: ToastCustomService, private idGenerateService: IdGenerateService) {}
 
   ngOnDestroy(): void {
     this.uploadedFiles = [];
@@ -38,14 +39,15 @@ export class InmuebleSubirArchivosComponent {
       if (conteoSizeFilesHost > this.sizeFotos) {
         break;
       }
+      const idUnique = this.idGenerateService.generate();
       let filesNames = file.name.split('.');
       let extension = filesNames.at(-1);
       json = {
         nameFile: file.name,
         sizeFile: file.size,
         progress: 0,
-        nombreArchivo: `${extension}`,
-        nombreSinExt: ``,
+        nombreArchivo: `${idUnique}.${extension}`,
+        nombreSinExt: `${idUnique}`,
         formato: file.type,
         idInmueble: this.idInmueble,
         archivo: file.type,
@@ -71,7 +73,7 @@ export class InmuebleSubirArchivosComponent {
     formData.append('guardar', 'true');
     formData.append('tipoDocumento', environment.rutaImgPhp);
     formData.append('nombreImg', nombreSinExt);
-    formData.append('archivoCapiro', file);
+    formData.append('archivoSj', file);
     this.propiedadesService.getUploadPhotoHosting(formData).subscribe({
       next: event => {
         switch (event.type) {

@@ -16,10 +16,12 @@ export class InmuebleDetalleComponent implements OnInit {
   idInmueble: number = 0;
   botonVenta: boolean = false;
   botonArriendo: boolean = false;
-  botonContacto: boolean = false;
+  ventaTexto: boolean = false;
+  arriendoTexto: boolean = false;
   infoInmueble: ResponseInmueble = {} as ResponseInmueble;
   fotosInmueble: ResponseArchivo[] = [];
   isLogging: string = '';
+  mostrarModal: boolean = false;
 
   constructor(
     private router: Router,
@@ -71,10 +73,17 @@ export class InmuebleDetalleComponent implements OnInit {
       this.botonVenta = true;
     } else if (tipoPublicacion === 'Arriendo') {
       this.botonArriendo = true;
-    } else {
-      this.botonContacto = true;
-    }
+    } 
   }
 
-  arriendo() {}
+  abrirModal() {
+    this.arriendoTexto = this.botonArriendo;
+    this.ventaTexto = this.botonVenta;
+    this.mostrarModal = true;
+  }
+  cerrarModal(event: any) {
+    this.arriendoTexto = false;
+    this.ventaTexto = false;
+    this.mostrarModal = event;
+  }
 }
