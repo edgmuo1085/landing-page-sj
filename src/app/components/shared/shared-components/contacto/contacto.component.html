@@ -1,7 +1,7 @@
 <div class="margin-custom" id="contacto"></div>
 <div class="d-flex justify-content-center">
   <div class="section-header-title animate__animated animate__fadeInUp">
-    <h1 class="section-title">CONTACTANOS</h1>
+    <h1 class="section-title">TRABAJA CON NOSOTROS</h1>
   </div>
 </div>
 <section class="section-view container-fluid my-4">
@@ -10,7 +10,7 @@
   </figure>
 
   <div class="section-view-content section-view-content--left animate__animated animate__fadeIn">
-    <h2 class="title">Para contactarnos llenar el siguiente formulario:</h2>
+    <h2 class="title">Para trabajar con nosotros llenar el siguiente formulario:</h2>
 
     <div class="container px-3">
       <form id="contactForm" [formGroup]="formContact" (ngSubmit)="enviar()" autocomplete="off">
@@ -63,17 +63,8 @@
           <label for="cedula">Cédula</label>
         </div>
         <div class="form-floating mb-3">
-          <textarea
-            class="form-control"
-            [ngClass]="{ 'is-invalid': formCtrlC['descripcion'].touched && formCtrlC['descripcion'].errors }"
-            formControlName="descripcion"
-            id="descricion"
-            type="text"
-            placeholder="Descrición"
-            required=""
-            style="height: 10rem"
-          ></textarea>
-          <label for="descricion">Descripción</label>
+          <input #archivoInput class="form-control" formControlName="archivo" id="archivo" type="file" required />
+         <label for="archivo">Adjuntar Hoja de Vida</label>
         </div>
         <div class="d-flex justify-content-end">
           <button class="enviar" type="submit">
