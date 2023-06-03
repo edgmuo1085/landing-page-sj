@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ParametrosShared } from 'src/app/components/interfaces/parametros.interface';
+import { DepartamentoService } from 'src/app/components/shared/shared-services/departametos.service';
 
 import { environment } from 'src/environments/environment';
 
@@ -15,12 +16,15 @@ export class InmueblesFiltrosComponent implements OnInit {
   estadosInmueble: ParametrosShared[] = environment.estadoInmueble;
   listaHabitaciones: ParametrosShared[] = environment.listaHabitaciones;
   tipoCopropiedad: ParametrosShared[] = environment.listaCopropiedad;
+  listaDepartamento: ParametrosShared[] = environment.listaDepartamentos;
   tipoInmueble: string = '';
   copropiedad: string = '';
   estado: string = '';
   habitaciones: string = '';
-
-  constructor() {}
+  municipio: string = '';
+  departamento: string = '';
+  ciudades:string[]=[];
+  constructor(private depar: DepartamentoService) {}
 
   ngOnInit(): void {}
 
@@ -29,9 +33,19 @@ export class InmueblesFiltrosComponent implements OnInit {
     this.copropiedad = '';
     this.estado = '';
     this.habitaciones = '';
+    this.departamento = '';
     this.actionFiltrosInmueble.emit();
   }
-
+  onChangeDepartamento(event: any) {
+    this.departamento = event.target.value;
+    this.depart(this.departamento);
+  }
+  depart(nombre: string) {
+    console.log(nombre)
+    this.depar.depar(nombre).subscribe((response: string[]) => {
+      this.ciudades=response;
+    });
+  }
   consultarFiltro(event: any) {
     if (!event.target.value) {
       return;
@@ -42,6 +56,8 @@ console.log(this.copropiedad);
       { keyForm: 'copropiedad', valueForm: this.copropiedad },
       { keyForm: 'estado', valueForm: this.estado },
       { keyForm: 'habitacion', valueForm: this.habitaciones },
+      { keyForm: 'departamento', valueForm: this.departamento },
+      { keyForm: 'municipio', valueForm: this.municipio },
     ];
 
     let json = {};

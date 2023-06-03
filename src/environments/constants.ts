@@ -313,6 +313,137 @@ export const parametrosSelect = {
       label: 'CONDOMINIO SAN NICOLAS DE LLANOGRANDE P.H.',
     },
   ],
+  listaDepartamentos: [
+    {
+      value:'Amazonas',
+      label:'Amazonas',
+    },
+    {
+      value:'Antioquia',
+      label:'Antioquia',
+    },
+    {
+      value:'Arauca',
+      label:'Arauca',
+    },
+    {
+      value:'Atl\u00e1ntico',
+      label:'Atl\u00e1ntico',
+    },
+    {
+      value:'Bol\u00edvar',
+      label:'Bol\u00edvar',
+    },
+    {
+      value:'Boyac\u00e1',
+      label:'Boyac\u00e1',
+    },
+    {
+      value:'Caldas',
+      label:'Caldas',
+    },
+    {
+      value:'Caquet\u00e1',
+      label:'Caquet\u00e1',
+    },
+    {
+      value:'Casanare',
+      label:'Casanare',
+    },
+    {
+      value:'Cauca',
+      label:'Cauca',
+    },
+    {
+      value:'Cesar',
+      label:'Cesar',
+    },
+    {
+      value:'Choc\u00f3',
+      label:'Choc\u00f3',
+    },
+    {
+      value:'Cundinamarca',
+      label:'Cundinamarca',
+    },
+    {
+      value:'C\u00f3rdoba',
+      label:'C\u00f3rdoba',
+    },
+    {
+      value:'Guain\u00eda',
+      label:'Guain\u00eda',
+    },
+    {
+      value:'Guaviare',
+      label:'Guaviare',
+    },
+    {
+      value:'Huila',
+      label:'Huila',
+    },
+    {
+      value:'La Guajira',
+      label:'La Guajira',
+    },
+    {
+      value:'Magdalena',
+      label:'Magdalena',
+    },
+    {
+      value:'Meta',
+      label:'Meta',
+    },
+    {
+      value:'Nari\u00f1o',
+      label:'Nari\u00f1o',
+    },
+    {
+      value:'Norte de Santander',
+      label:'Norte de Santander',
+    },
+    {
+      value:'Putumayo',
+      label:'Putumayo',
+    },
+    {
+      value:'Quind\u00edo',
+      label:'Quind\u00edo',
+    },
+    {
+      value:'Risaralda',
+      label:'Risaralda',
+    },
+    {
+      value:'San Andr\u00e9s y Providencia',
+      label:'San Andr\u00e9s y Providencia',
+    },
+    {
+      value:'Santander',
+      label:'Santander',
+    },
+    {
+      value:'Sucre',
+      label:'Sucre',
+    },
+    {
+      value:'Tolima',
+      label:'Tolima',
+    },
+    {
+      value:'Valle del Cauca',
+      label:'Valle del Cauca',
+    },
+    {
+      value:'Vaup\u00e9s',
+      label:'Vaup\u00e9s',
+    },
+    {
+      value:'Vichada',
+      label:'Vichada',
+    },
+
+  ]
 };
 
 export const requisitosPropiedades = {

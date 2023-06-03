@@ -29,6 +29,10 @@ export class InmuebleRegistrarComponent implements OnInit {
   tipoPublicacion: ParametrosShared[] = environment.tipoPublicacion;
   tipoConstruccion: ParametrosShared[] = environment.tipoConstruccion;
   copropiedad: ParametrosShared[] = environment.listaCopropiedad;
+  listaDepartamentos:ParametrosShared[]=environment.listaDepartamentos;;
+  departamentoSeleccionado: string = '';
+
+  ciudades:string[]=[];
   loading: boolean = false;
 
   constructor(
@@ -36,7 +40,8 @@ export class InmuebleRegistrarComponent implements OnInit {
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private propiedadesService: PropiedadesService,
-    private toastCustomService: ToastCustomService
+    private toastCustomService: ToastCustomService,
+
   ) {
     this.activatedRoute.params.subscribe((params: Params) => {
       if (params['idInmueble']) {
@@ -65,7 +70,10 @@ export class InmuebleRegistrarComponent implements OnInit {
       direccion: ['', [Validators.required]],
       copropiedad: ['', [Validators.required]],
       numeroApartamento: ['', [Validators.required,Validators.pattern(environment.soloNumeros)]],
+      departamento: ['', [Validators.required]],
+      municipio: ['', [Validators.required]],
     });
+   
   }
 
   registrarActualizarInmueble() {
@@ -76,7 +84,7 @@ export class InmuebleRegistrarComponent implements OnInit {
 
     this.onSubmitRegistrarInmueble();
   }
-
+  
   onSubmitRegistrarInmueble() {
     if (this.formRegistroInmueble.invalid) {
       this.toastCustomService.showToast('Advertencia', 'Debe diligenciar todos los campos', 'error');
@@ -97,8 +105,11 @@ export class InmuebleRegistrarComponent implements OnInit {
       this.formRegistroInmueble.get('tipoConstruccion')?.value,
       this.formRegistroInmueble.get('direccion')?.value,
       this.formRegistroInmueble.get('copropiedad')?.value,
-      this.formRegistroInmueble.get('numeroApartamento')?.value
+      this.formRegistroInmueble.get('numeroApartamento')?.value,
+      this.formRegistroInmueble.get('departamento')?.value,
+      this.formRegistroInmueble.get('municipio')?.value
     );
+    console.log(this.formRegistroInmueble)
     this.propiedadesService.crearInmueble(registroInmueble).subscribe({
       next: response => {
         if (!response.id) {
@@ -145,7 +156,10 @@ export class InmuebleRegistrarComponent implements OnInit {
       this.formRegistroInmueble.get('direccion')?.value,
       +this.idInmuebleUpdate,
       this.formRegistroInmueble.get('copropiedad')?.value,
-      this.formRegistroInmueble.get('numeroApartamento')?.value
+      this.formRegistroInmueble.get('numeroApartamento')?.value,
+      this.formRegistroInmueble.get('departamento')?.value,
+      this.formRegistroInmueble.get('municipio')?.value
+      
     );
     this.propiedadesService.crearInmueble(actualizarInmuebleData).subscribe({
       next: response => {
@@ -191,6 +205,8 @@ export class InmuebleRegistrarComponent implements OnInit {
           direccion: response.direccion,
           copropiedad: response.copropiedad,
           numeroApartamento: response.numeroApartamento,
+          departamento:response.departamento,
+          municipio:response.municipio,
         });
       },
       error: err => {

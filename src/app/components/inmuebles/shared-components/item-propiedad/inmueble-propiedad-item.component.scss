@@ -1,6 +1,6 @@
 @import 'layout.functions';
 
-.contenedor-item-inmueble {
+/*.contenedor-item-inmueble {
   box-shadow: 5px 5px 15px #88888846;
 
   .descripcion-item-inmueble {
@@ -82,4 +82,89 @@
       }
     }
   }
+}*/
+.contenedor-item-inmueble {
+  box-shadow: 5px 5px 15px #88888846;
 }
+
+.contenedor-item-inmueble .descripcion-item-inmueble {
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-bottom: 16px;
+}
+
+.contenedor-item-inmueble .descripcion-item-inmueble h3 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-principal);
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.contenedor-item-inmueble .descripcion-item-inmueble .icons-item-inmueble {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.contenedor-item-inmueble .descripcion-item-inmueble .icons-item-inmueble .icons-item {
+  font-size: 14px;
+}
+
+.contenedor-item-inmueble .descripcion-item-inmueble .icons-item-inmueble .icons-item .icons-item-img {
+  width: 30%;
+  max-width: 35px;
+}
+
+.contenedor-item-inmueble .descripcion-item-inmueble .badges-item-inmuebles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.contenedor-item-inmueble .descripcion-item-inmueble .badges-item-inmuebles .item-badge {
+  background: var(--color-secundario);
+  margin-right: 8px;
+  padding: 6px 10px;
+  border-radius: 16px;
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.contenedor-item-inmueble .descripcion-item-inmueble .badges-item-inmuebles .item-badge.badge-arriendo {
+  background: #749e41;
+}
+
+.contenedor-item-inmueble .descripcion-item-inmueble .badges-item-inmuebles .item-badge.badge-venta {
+  background: #a9c91e;
+}
+
+.contenedor-item-inmueble .descripcion-item-inmueble .btn-item-inmuebles {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contenedor-item-inmueble .descripcion-item-inmueble .btn-item-inmuebles .btn-item-inmueble {
+  background-color: var(--color-principal);
+  text-decoration: none;
+  border: 0;
+  color: #ffffff;
+  padding: 4px 32px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.contenedor-item-inmueble .descripcion-item-inmueble .btn-item-inmuebles .btn-item-inmueble:hover {
+  background-color: var(--color-hover);
+}
+
+.contenedor-item-inmueble .descripcion-item-inmueble .btn-item-inmuebles .precio-info {
+  font-weight: 700;
+}
+

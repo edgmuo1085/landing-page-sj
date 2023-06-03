@@ -144,6 +144,7 @@
         "nombreRazon": "Campo requerido",
         "celularRefencia": "Campo requerido",
         "municipio": "Campo requerido",
+        "departamento": "Campo requerido",
         "nombresPersonalesUno": "Campo requerido",
         "celularPersonalesUno": "Campo requerido",
         "municipioPersonalesUno": "Campo requerido",

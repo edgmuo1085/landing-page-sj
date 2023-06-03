@@ -26,6 +26,24 @@
     </div>
     <div class="col-12 col-md-3 col-lg-3 my-2">
       <div class="form-floating">
+        <select class="form-select" id="departamento" aria-label="Departamento" (change)="onChangeDepartamento($event)" (change)="consultarFiltro($event)" [(ngModel)]="departamento">
+          <option value="" disabled selected="selected">Elija una opción</option>
+          <option *ngFor="let departamento of listaDepartamento" [value]="departamento.value">{{ departamento.label }}</option>
+        </select>
+        <label for="departamento">Departamento</label>
+      </div>
+    </div>
+    <div class="col-12 col-md-3 col-lg-3 my-2">
+      <div class="form-floating">
+        <select class="form-select" id="municipio" aria-label="Municipio" (change)="consultarFiltro($event)" [(ngModel)]="municipio">
+          <option value="" disabled selected="selected">Elija una opción</option>
+          <option *ngFor="let municipios of ciudades" [value]="municipios">{{ municipios }}</option>
+        </select>
+        <label for="municipio">Municipio</label>
+      </div>
+    </div>
+    <div class="col-12 col-md-3 col-lg-3 my-2">
+      <div class="form-floating">
         <select class="form-select" id="estado" aria-label="Estado" (change)="consultarFiltro($event)" [(ngModel)]="estado">
           <option value="" disabled selected="selected">Elija una opción</option>
           <option *ngFor="let tipo of estadosInmueble" [value]="tipo.value">{{ tipo.label }}</option>
