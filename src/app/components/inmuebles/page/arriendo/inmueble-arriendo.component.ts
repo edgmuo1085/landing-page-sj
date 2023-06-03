@@ -13,20 +13,24 @@ import { environment } from 'src/environments/environment';
 export class InmuebleArriendoComponent implements OnInit {
   propiedadesArriendo: ResponseInmueble[] = [];
   display: boolean = false;
+  mostrarFiltros = false;
 
   constructor(private router: Router, private propiedadesService: PropiedadesService) {}
 
   ngOnInit(): void {
     this.showPropiedades();
   }
-
+  toggleFiltros() {
+    this.mostrarFiltros = !this.mostrarFiltros;
+  }
   showPropiedades(masFilter?: any) {
     this.propiedadesArriendo = [];
     let filtros = {
       tipoPublicacion: 'Arriendo',
     };
     let filtersMore = masFilter ? { ...filtros, ...masFilter } : filtros;
-    let json = window.btoa(JSON.stringify(filtersMore));
+    let json = JSON.stringify(filtersMore);
+    console.log(json);
     this.propiedadesService.getPropiedadesFiltro(json).subscribe({
       next: async response => {
         if (!response.length) {

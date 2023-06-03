@@ -13,11 +13,15 @@ import { environment } from 'src/environments/environment';
 export class InmuebleVentaComponent implements OnInit {
   propiedadesVenta: ResponseInmueble[] = [];
   display: boolean = false;
+  mostrarFiltros = false;
 
   constructor(private router: Router, private propiedadesService: PropiedadesService) {}
 
   ngOnInit(): void {
     this.showPropiedades();
+  }
+  toggleFiltros() {
+    this.mostrarFiltros = !this.mostrarFiltros;
   }
 
   showPropiedades(masFilter?: any) {
@@ -26,7 +30,7 @@ export class InmuebleVentaComponent implements OnInit {
       tipoPublicacion: 'Venta',
     };
     let filtersMore = masFilter ? { ...filtros, ...masFilter } : filtros;
-    let json = window.btoa(JSON.stringify(filtersMore));
+    let json = JSON.stringify(filtersMore);
     this.propiedadesService.getPropiedadesFiltro(json).subscribe({
       next: async response => {
         if (!response.length) {

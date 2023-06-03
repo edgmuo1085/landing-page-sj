@@ -36,7 +36,7 @@ export class InmueblesFiltrosComponent implements OnInit {
     if (!event.target.value) {
       return;
     }
-
+console.log(this.copropiedad);
     let data = [
       { keyForm: 'tipoInmueble', valueForm: this.tipoInmueble },
       { keyForm: 'copropiedad', valueForm: this.copropiedad },

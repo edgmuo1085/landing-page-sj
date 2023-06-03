@@ -1,4 +1,4 @@
-<div class="row justify-content-center">
+<!--<div class="row justify-content-center">
   <div class="col-12">
     <p-table
       #tableHistorialTramites
@@ -98,8 +98,38 @@
       </ng-template>
     </p-table>
   </div>
-</div>
+</div>-->
 
+<div class="row justify-content-center">
+  <div class="col-12">
+    <div class="table-header">
+      <h2 class="titulo-busqueda">Buscar inmueble</h2>
+      <div class="search-input">
+        <i class="pi pi-search"></i>
+        <input type="text" (input)="filterGlobalListaInmuebles($event, 'contains')" placeholder="Buscar ..." />
+      </div>
+    </div>
+    <div class="card-container">
+      <div class="card" *ngFor="let inmueble of listaInmuebles">
+        <div class="card-header">
+          <h3>{{ inmueble.tipoInmueble }} {{ inmueble.numeroApartamento }}</h3>
+          <div class="card-icons">
+            <i class="pi pi-upload" (click)="subirImg(inmueble)" pTooltip="Anexar más imágenes" tooltipPosition="top"></i>
+            <i class="pi pi-eye" (click)="mostrarImg(inmueble)" pTooltip="Ver detalle" tooltipPosition="top"></i>
+            <i class="pi pi-images" (click)="actualizarImagenes(inmueble)" pTooltip="Actualizar imágenes" tooltipPosition="top"></i>
+            <i class="pi pi-pencil" (click)="actionEditInmueble(inmueble.id)" pTooltip="Actualizar inmueble" tooltipPosition="top"></i>
+          </div>
+        </div>
+        <div class="card-body">
+          <p><strong>Tipo Publicación:</strong> {{ inmueble.tipoPublicacion }}</p>
+          <p><strong>Área del predio:</strong> {{ inmueble.area + ' m' }}<sup>2</sup></p>
+          <p><strong>Precio:</strong> {{ inmueble.precio | currency : 'USD' : 'symbol' : '1.0-0' }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="empty-message" *ngIf="!listaInmuebles.length">No existen datos para mostrar.</div>
+  </div>
+</div>
 <app-modal-inmueble [visible]="visible" (eventCloseDialogModal)="closeModalUpload($event)">
   <app-inmueble-subir-archivos [idInmueble]="idInmueble" [sizeFotos]="sizeFotos" *ngIf="showUpload"></app-inmueble-subir-archivos>
 </app-modal-inmueble>

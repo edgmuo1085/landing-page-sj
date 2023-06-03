@@ -6,24 +6,20 @@
     font-weight: 700;
     color: var(--color-secundario);
   }
-  .btn-requisitos {
-    border: js-font-size(1px) solid var(--color-principal);
-    color: var(--color-principal);
-    padding: js-font-size(9px) js-font-size(48px);
-    border-radius: js-font-size(9px);
-    background-color: transparent;
-    cursor: pointer;
-    font-weight: 700;
-
-    &:hover {
-      color: #ffffff;
-      background-color: var(--color-principal);
-    }
-  }
 
   .titulo-sin-registro {
     font-size: js-font-size(28px);
     font-weight: 700;
     color: var(--color-secundario);
+  }
+  .btn-filtros {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .btn-filtros i {
+    font-size: 1.5rem; /* Ajusta el tamaño del icono según tus necesidades */
+    color: var(--color-secundario); /* Ajusta el color del icono según tus necesidades */
   }
 }

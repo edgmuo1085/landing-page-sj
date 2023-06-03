@@ -1,13 +1,85 @@
 @import 'layout.functions';
 
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
 .registro-inmueble-titulo {
-  font-size: js-font-size(20px);
+  font-size: 20px;
   color: var(--color-tercer);
-  font-weight: 900;
+  font-weight: bold;
+  text-align: center;
 }
 
 .registro-inmueble-descripcion {
-  font-size: js-font-size(16px);
-  color: var(--color-secundario);
-  margin: js-font-size(16px) 0;
+  text-align: center;
+  margin-top: 10px;
 }
+
+.form-section-title {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.row {
+  margin-bottom: 20px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+textarea {
+  height: 100px;
+}
+
+input[type="submit"],
+.button {
+  padding: 10px 20px;
+  background-color: #337ab7;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover,
+.button:hover {
+  background-color: #23527c;
+}
+
+.bg-gray {
+  background-color: #ccc;
+  color: #fff;
+}
+
+.form-button {
+  margin-top: 20px;
+}
+
+.form-btn {
+  padding: 10px 20px;
+  background-color: #337ab7;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.form-btn:hover {
+  background-color: #23527c;
+}
+
+.spinner-border {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-left: 5px;
+}
+
+

@@ -77,7 +77,7 @@ export class InmuebleTableComponent {
     this.showModalUpdateImg = true;
     this.showBlockUpImg = true;
   }
-
+  
   getImagenes(idInmueble: number) {
     this.propiedadesService.getInmuebleOne(idInmueble).subscribe({
       next: response => {

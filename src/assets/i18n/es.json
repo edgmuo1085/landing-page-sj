@@ -138,6 +138,8 @@
         "empresaPensionado": "Campo requerido",
         "ingresoMensualPension": "Campo requerido",
         "deduccionMensual": "Campo requerido",
+        "copropiedad": "Campo requerido",
+        
 
         "nombreRazon": "Campo requerido",
         "celularRefencia": "Campo requerido",
