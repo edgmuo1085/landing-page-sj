@@ -20,7 +20,14 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-link"><a routerLink="/inmuebles" class="nav-item" routerLinkActive="active-link">Inicio</a></li>
-        <li class="nav-link"><a routerLink="/inmuebles/lista" class="nav-item" routerLinkActive="active-link">Registrar Inmueble</a></li>
+        <li class="nav-link">
+          <a class="nav-item custom-link" (click)="solicitarCorreo()">Registrar Inmueble</a>           
+          <div #notification id="notification" class="notification">
+            El correo ingresado no es válido.
+          </div>
+        </li>
+        <!--<li class="nav-link"><a routerLink="/inmuebles/lista" class="nav-item" routerLinkActive="active-link" (click)="solicitarCorreo()">Registrar Inmueble</a></li>-->
+        <!-- <li class="nav-link"><a routerLink="/inmuebles/lista" class="nav-item" routerLinkActive="active-link">Registrar Inmueble</a></li>-->
         <li class="nav-link"><a routerLink="/" class="nav-item" routerLinkActive="active-link">Regresar</a></li>
       </ul>
     </div>

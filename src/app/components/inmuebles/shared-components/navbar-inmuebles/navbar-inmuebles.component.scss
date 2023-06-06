@@ -1,0 +1,27 @@
+.custom-link {
+    text-decoration: none; /* Quitar el subrayado del enlace */
+    cursor: pointer; /* Cambiar el cursor al puntero */
+    color: #000; /* Establecer el color del texto */
+  }
+
+  .notification {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    background-color: #f8d7da;
+    color: #721c24;
+    font-weight: bold;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+    margin-top: 5px;
+    transition: opacity 0.3s;
+  }
+  
+  .notification.show {
+    display: block;
+    opacity: 1;
+  }
+  
